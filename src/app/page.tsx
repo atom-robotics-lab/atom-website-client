@@ -1,12 +1,21 @@
-import Button from "@/components/Button";
-import React from "react";
+import React from 'react'
+import ".//globals.css";
+import Navbar from '../components/navbar';
+import Background from '../components/background';
+import Home from '@/components/home';
 
-const hello = () => {
+const page = () => {
   return (
     <div>
-      <Button heading="Hello" />
-    </div>
-  );
-};
+      
+      <Navbar/>
+      <Home/>
+      
+      
 
-export default hello;
+    </div>
+  )
+}
+
+export default page;
+

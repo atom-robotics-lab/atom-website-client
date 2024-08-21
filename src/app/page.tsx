@@ -3,22 +3,28 @@ import ".//globals.css";
 import Navbar from '../components/navbar';
 import Background from '../components/background';
 import Home from '@/components/home';
+import About from '@/components/about';
+import Blogs from '@/components/blogs';
+import Footer from '@/components/footer';
 
-const page = () => {
+const Page = () => {
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Background 
         color="#010019"  
-        videoUrl="/4.mp4"  // Replace with your video path
-        opacity={0.5}  // Optional: set the opacity of the video
+        videoUrl="/4.mp4" 
+        opacity={0.5}  
       />
-      <Navbar/>
-      <Home/>      
-      
-
+      <Navbar />
+      <div style={{ flex: 1 }}> {/* Make the content container flexible */}
+        <Home />
+        <About />
+        <Blogs />
+      </div>
+      <Footer /> {/* Footer stays at the bottom */}
     </div>
-  )
+  );
 }
 
-export default page;
+export default Page;
 

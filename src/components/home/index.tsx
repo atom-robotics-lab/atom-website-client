@@ -30,16 +30,16 @@ const Home = () => {
       <Typography
         variant="h2"
         component="h1"
-        className={silkscreen.className} // Apply Silkscreen font
+        className={silkscreen.className}
         sx={{
           fontSize: '4rem',
           fontWeight: 'bold',
           color: '#ffff',
           textAlign: 'center',
           marginBottom: '2rem',
-          whiteSpace: 'nowrap', // Prevent text wrapping for typing effect
+          whiteSpace: 'nowrap', 
           overflow: 'hidden',
-          borderRight: '.15em solid #001ea5', // Cursor effect
+          borderRight: '.15em solid #001ea5', 
           animation: 'typing 3.5s steps(30, end), blink-caret .75s step-end infinite',
           '& span': {
             background: '#001ea5',

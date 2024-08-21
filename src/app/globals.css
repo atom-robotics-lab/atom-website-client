@@ -11,3 +11,13 @@ body {
     color: white; /* Optional: sets the text color to white for better contrast */
   }
   
+  #__next {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .content {
+    flex: 1; /* Take up remaining space */
+    padding-bottom: 4rem; /* Add padding to prevent overlap with footer */
+  }

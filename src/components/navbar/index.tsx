@@ -36,11 +36,21 @@ const Navbar = () => {
           <Button color="inherit" href="#projects" sx={{ mx: 2 }}>
             Projects
           </Button>
-          <Button color="inherit" href="#wiki" sx={{ mx: 2 }}>
+          <Button color="inherit" sx={{ mx: 2 }}
+           href="https://atom-robotics-lab.github.io/wiki/" 
+           target="_blank" 
+           rel="noopener noreferrer" >
             Wiki
           </Button>
           <Button color="inherit" href="#download" sx={{ mx: 2 }}>
             Download
+          </Button>
+          <Button color='inherit'  sx={{mx:2, borderRadius:"32px",background: '#0d47a1',
+            color: 'white',padding:"0.8rem 1rem"}}
+           href="https://linktr.ee/a.t.o.m_robotics_lab" 
+           target="_blank" 
+           rel="noopener noreferrer">
+            Get in touch
           </Button>
         </Box>
       </Toolbar>

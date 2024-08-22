@@ -14,7 +14,8 @@ const Footer = () => {
     >
       <Container maxWidth="lg">
         <Grid container spacing={4}>
-          <Grid item xs={12} sm={4}>
+          {/* Adjusting the Grid for responsiveness */}
+          <Grid item xs={12} md={4}>
             <Typography variant="h6" gutterBottom>
               Where to find us?
             </Typography>
@@ -27,10 +28,10 @@ const Footer = () => {
             </Typography>
           </Grid>
 
- 
-          <Grid item xs={12} sm={8}>
+          <Grid item xs={12} md={8}>
             <Grid container spacing={4}>
-              <Grid item xs={4}>
+              {/* Responsive Grid Item */}
+              <Grid item xs={12} sm={4}>
                 <Typography variant="h6" gutterBottom>
                   Sitemap
                 </Typography>
@@ -48,7 +49,8 @@ const Footer = () => {
                 </Link>
               </Grid>
 
-              <Grid item xs={4}>
+              {/* Responsive Grid Item */}
+              <Grid item xs={12} sm={4}>
                 <Typography variant="h6" gutterBottom>
                   Follow Us
                 </Typography>
@@ -68,7 +70,8 @@ const Footer = () => {
                 </Box>
               </Grid>
 
-              <Grid item xs={4}>
+              {/* Responsive Grid Item */}
+              <Grid item xs={12} sm={4}>
                 <Typography variant="h6" gutterBottom>
                   We like to build Robots
                 </Typography>

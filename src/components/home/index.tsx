@@ -1,5 +1,4 @@
-// components/Home.tsx
-"use client"
+"use client";
 
 import React from 'react';
 import { Box, Button, Typography } from '@mui/material';
@@ -19,7 +18,7 @@ const Home = () => {
     <Box
       sx={{
         position: 'relative',
-        minHeight: '60vh',
+        minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -30,13 +29,13 @@ const Home = () => {
       <Typography
         variant="h2"
         component="h1"
-        className={silkscreen.className}
+        className={poppins.className}
         sx={{
-          fontSize: '4rem',
+          fontSize: '5rem',
           fontWeight: 'bold',
           color: '#ffff',
           textAlign: 'center',
-          marginBottom: '2rem',
+          marginBottom: '3rem',
           whiteSpace: 'nowrap', 
           overflow: 'hidden',
           borderRight: '.15em solid #001ea5', 
@@ -49,7 +48,7 @@ const Home = () => {
           },
         }}
       >
-        Welcome to <span>A.T.O.M Robotics</span>
+        Welcome to A.T.O.M Robotics
       </Typography>
 
       <Box

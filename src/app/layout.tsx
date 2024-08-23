@@ -1,23 +1,22 @@
-import type { Metadata } from "next";
-import { Inter , Poppins} from "next/font/google";
-import "./globals.css";
+import './globals.css'; // Import global styles
+import Navbar from '@/components/navbar'; // Adjust the path if necessary
+import Footer from '@/components/footer';
 
-const inter = Inter({ subsets: ["latin"] });
-const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] }); // Add desired weights
-
-export const metadata: Metadata = {
-  title: "Atom Robotics Website",
-  description: "Official Website of ATOM",
+export const metadata = {
+  title: 'Atom Robotics Lab',
+  description: 'Robotics Society of MAIT',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <Navbar />
+        <main>
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   );
 }

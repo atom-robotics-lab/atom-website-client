@@ -1,5 +1,5 @@
 {
-  "name": "atom-robotics-client",
+  "name": "atom-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,31 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.13.0",
-    "@emotion/styled": "^11.13.0",
-    "@mui/material": "^5.16.7",
-    "autoprefixer": "^10.4.20",
-    "babel-plugin-styled-components": "^2.1.4",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.29",
-    "next": "^14.2.5",
-    "next-videos": "^1.4.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-typewriter-effect": "^1.1.0",
-    "styled-components": "^6.1.12",
-    "tailwind-merge": "^2.5.2",
-    "typewriter-effect": "^2.21.0"
+    "next": "14.2.6",
+    "react": "^18",
+    "react-dom": "^18",
+    "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@types/styled-components": "^5.1.34",
     "eslint": "^8",
-    "eslint-config-next": "14.2.5",
-    "postcss": "^8.4.41",
-    "tailwindcss": "^3.4.9",
+    "eslint-config-next": "14.2.6",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
 }

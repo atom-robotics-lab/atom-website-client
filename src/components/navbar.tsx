@@ -4,7 +4,6 @@ import React from 'react';
 import { Toolbar, Box, Button, IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme, useMediaQuery } from '@mui/material';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 const Navbar = () => {

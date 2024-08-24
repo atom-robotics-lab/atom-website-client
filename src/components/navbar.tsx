@@ -33,7 +33,7 @@ const Navbar = () => {
     >
       <Toolbar sx={{ justifyContent: 'space-between', width: '100%' }}>
         {/* Logo */}
-        <Box component="img" src="/logo_1.png" alt="Logo" sx={{ height: 70 }} />
+        <Box component="img" src="/logo_1.jpg" alt="Logo" sx={{ height: 70 }} />
 
         {/* Navbar Links */}
         {isSmallScreen ? (

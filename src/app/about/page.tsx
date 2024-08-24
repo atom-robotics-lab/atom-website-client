@@ -9,7 +9,7 @@ const About = () => {
       <div className="w-full flex flex-col md:flex-row items-start p-8 md:p-16 mt-16 md:mt-24">
         {/* Right section (now on the left side) */}
         <div className="md:w-1/2 flex flex-col items-center mt-8 md:mt-0 md:mr-4">
-          <div className="bg-blue-600 text-white p-8 md:p-10 rounded-md text-center w-80 h-72 md:w-96 md:h-80 flex items-center justify-center mt-2 md:mt-6">
+          <div className="bg-blue-800 text-white p-8 md:p-10 rounded-md text-center w-80 h-72 md:w-96 md:h-80 flex items-center justify-center mt-2 md:mt-6 ">
             <div>
               <p className="text-4xl font-bold mb-5">WE ARE A.T.O.M</p>
               <p className="text-xl">A SOCIETY | COMMUNITY OF ROBOTICS BASED IN DELHI</p>
@@ -38,12 +38,12 @@ const About = () => {
         <FocusCards
           cards={[
             {
-              circleImageSrc: "/images/naman.png", // Optional circle image
+              circleImageSrc: "/images/naman.png", 
               name: "NAMAN MALIK (@Mr_No-Man)",
               description: "Founder | Admin | CAD | IOT",
               instagramLink: "https://instagram.com/_naman.malik_",
               githubLink: "https://github.com/naman",
-              linkedinLink: "https://linkedin.com/in/naman", // Optional LinkedIn link
+              linkedinLink: "https://linkedin.com/in/naman",
             },
             {
               circleImageSrc: "/images/manav.png",

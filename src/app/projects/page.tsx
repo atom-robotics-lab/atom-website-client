@@ -10,7 +10,7 @@ const poppins = Poppins({
 
 const Projects = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 3;
+  const itemsPerPage = 6;
 
   const projects = [
     {
@@ -98,7 +98,7 @@ const Projects = () => {
             key={index}
             onClick={() => setCurrentPage(index + 1)}
             className={`px-4 py-2 rounded-full ${
-              currentPage === index + 1 ? "bg-blue-500" : "bg-gray-700"
+              currentPage === index + 1 ? "bg-blue-800" : "bg-gray-700"
             }`}
           >
             {index + 1}

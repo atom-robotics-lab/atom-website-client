@@ -2,15 +2,11 @@
 
 import React from 'react';
 import { Box, Button, Typography } from '@mui/material';
-import { Silkscreen, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "700"],
-});
-const silkscreen = Silkscreen({
-  subsets: ["latin"],
-  weight: ["400"],
 });
 
 const Home = () => {

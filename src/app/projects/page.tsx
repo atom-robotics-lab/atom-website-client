@@ -21,43 +21,53 @@ const Projects = () => {
     {
       title: "Hexapod",
       description: "ROS | OpenCV | Gazebo | Robot-Perception",
-      bgImage: "bg-[url('/path/to/image2.jpg')]",
+      bgImage: "bg-[url('/project-thumbnails/hexapod.png')]",
     },
     {
       title: "Robotic Arm",
       description: "ROS | OpenCV | Gazebo | Robot-Perception",
-      bgImage: "bg-[url('/path/to/image3.jpg')]",
+      bgImage: "bg-[url('/project-thumbnails/arm.png')]",
     },
     {
-      title: "Drone",
+      title: "CNC",
       description: "ROS | Gazebo | Drone Control",
-      bgImage: "bg-[url('/path/to/image4.jpg')]",
+      bgImage: "bg-[url('/project-thumbnails/cnc.png')]",
     },
     {
-      title: "Autonomous Car",
-      description: "ROS | OpenCV | Car Simulation",
-      bgImage: "bg-[url('/path/to/image5.jpg')]",
-    },
-    {
-      title: "Humanoid Robot",
+      title: "Omnidrive AMR",
       description: "ROS | OpenCV | Humanoid Control",
       bgImage: "bg-[url('/path/to/image6.jpg')]",
     },
     {
-      title: "MR Robot",
+      title: "Swarm Bots",
       description: "ROS | OpenCV | Gazebo | Robot-Perception",
       bgImage: "bg-[url('/path/to/image7.jpg')]",
     },
     {
-      title: "Hexapod",
+      title: "MR Robot GUI",
       description: "ROS | OpenCV | Gazebo | Robot-Perception",
-      bgImage: "bg-[url('/path/to/image8.jpg')]",
+      bgImage: "bg-[url('/project-thumbnails/mr-robot-gui.png')]",
     },
     {
-      title: "Robotic Arm",
+      title: "Robotic Arm GUI",
       description: "ROS | OpenCV | Gazebo | Robot-Perception",
       bgImage: "bg-[url('/path/to/image9.jpg')]",
     },
+    {
+        title: "Line Follower",
+        description: "ROS | OpenCV | Gazebo | Robot-Perception",
+        bgImage: "bg-[url('/path/to/image9.jpg')]",
+      },
+      {
+        title: "Person Follower",
+        description: "ROS | OpenCV | Gazebo | Robot-Perception",
+        bgImage: "bg-[url('/path/to/image9.jpg')]",
+      },
+      {
+        title: "Perception Pipeline",
+        description: "ROS | OpenCV | Gazebo | Robot-Perception",
+        bgImage: "bg-[url('/path/to/image9.jpg')]",
+      },
   ];
 
   const indexOfLastItem = currentPage * itemsPerPage;

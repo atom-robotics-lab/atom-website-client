@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Toolbar, Box, Button, IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme, useMediaQuery } from '@mui/material';
@@ -11,6 +11,23 @@ const Navbar = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const isMediumScreen = useMediaQuery(theme.breakpoints.between('sm', 'md'));
   const router = useRouter();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleNavigation = (path:any) => {
     router.push(path);
@@ -20,15 +37,19 @@ const Navbar = () => {
     <Box
       sx={{
         position: 'fixed',
-        top: 12,
-        right: 5,
+        top: 0,
+        right: 0,
+        left: 0,
         zIndex: 1300,
         width: '100%',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: 'transparent',
-        px: isSmallScreen || isMediumScreen ? '1rem' : '6rem', // Adjust padding for smaller screens
+        backgroundColor: isScrolled ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
+        backdropFilter: isScrolled ? 'blur(10px)' : 'none',
+        transition: 'background-color 0.3s, backdrop-filter 0.3s',
+        py: 1,
+        px: isSmallScreen || isMediumScreen ? '1rem' : '6rem',
       }}
     >
       <Toolbar sx={{ justifyContent: 'space-between', width: '100%' }}>
@@ -74,6 +95,13 @@ const Navbar = () => {
               onClick={() => handleNavigation('/projects')}
             >
               Projects
+            </Button>
+            <Button
+              color="inherit"
+              sx={{ mx: 2 }}
+              onClick={() => handleNavigation('/blogs')}
+            >
+              Blogs
             </Button>
             <Button
               color="inherit"

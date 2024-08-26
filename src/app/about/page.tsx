@@ -16,15 +16,7 @@ const About = () => {
         </div>
         <div className="md:w-1/2 text-xl leading-relaxed mr-4 max-w-md md:max-w-lg">
           <p>
-            Our world is heading towards an Industrial Revolution with the
-            introduction of Robotics & AI. Intelligent & Advanced robots are now
-            being used everywhere to either assist humans or execute tasks that
-            otherwise wouldn't have been possible by humans. Open source
-            technologies like Gazebo Robotics Simulator & ROS (Robot Operating
-            System) have made intelligent industrial/household robotics
-            accessible to students & researchers. As engineering students,
-            these technologies intrigue us to become a part of this industrial
-            revolution on the brink of innovation.
+          Welcome to A.T.O.M  Lab, the robotics society of our college. At A.T.O.M, we focus on integrating software, hardware, and mechanical engineering to develop practical robotic solutions. Our projects include the MR Robot, an autonomous mobile robot, the Robotics ARM: A.J.G.A.R, and a people follower robot, among others. We are committed to advancing technology and providing students with hands-on experience in robotics.
           </p>
         </div>
       </div>
@@ -97,12 +89,28 @@ const About = () => {
               linkedinLink: "https://www.linkedin.com/in/aakshar-garg-64611026a/",
             },
             {
+              circleImageSrc: "/images/prakhar.png",
+              name: "PRAKHAR SHARMA (@pyarakhar)",
+              description: "CORE | Web Development",
+              instagramLink: "https://instagram.com/pyarakhar",
+              githubLink: "https://github.com/prakhar1535",
+              linkedinLink: "https://www.linkedin.com/in/prakhar1535/",
+            },
+            {
               circleImageSrc: "/images/aastha.png",
               name: "AASTHA VERMA (@pixelpuff)",
               description: "CORE | AI/ML | ROS | IOT",
               instagramLink: "https://instagram.com/aasthaverma_27",
               githubLink: "https://github.com/aasthaverma27",
               linkedinLink: "https://www.linkedin.com/in/aastha-verma-9459032aa/",
+            },
+            {
+              circleImageSrc: "/images/shlok.png",
+              name: "SHLOK SHARMA (@shawarma)",
+              description: "CORE | Embedded Systems | IOT",
+              instagramLink: "https://instagram.com/shlok_shawarma",
+              githubLink: "https://github.com/shloksharma273",
+              linkedinLink: "https://www.linkedin.com/in/shlok-sharma-b42320264/",
             },
             {
               circleImageSrc: "/images/aryan.png",
@@ -112,6 +120,7 @@ const About = () => {
               githubLink: "https://github.com/Aryans006",
               linkedinLink: "https://www.linkedin.com/in/aryan-sethi-3973b128b/",
             },
+
             {
               circleImageSrc: "/images/vansh.png",
               name: "VANSH GUPTA (@gupta)",
@@ -127,6 +136,14 @@ const About = () => {
               instagramLink: "https://instagram.com/_mehakoberoi_",
               githubLink: "https://github.com/mehakoberoii",
               linkedinLink: "https://www.linkedin.com/in/mehak-oberoi-9191a62b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            },
+            {
+              circleImageSrc: "/images/mitanshu.png",
+              name: "MITANSHU (@suus)",
+              description: "CORE | ROS",
+              instagramLink: "https://instagram.com/mitanshu._.05",
+              githubLink: "https://github.com/mitanshu-2004",
+              linkedinLink: "https://www.linkedin.com/in/mitanshu-goel-177624248/",
             },
             {
               circleImageSrc: "/images/deepansh.png",
@@ -152,30 +169,9 @@ const About = () => {
               githubLink: " https://github.com/anurag-choudhury",
               linkedinLink: " https://www.linkedin.com/in/anurag-choudhury-124b29259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
             },
-            {
-              circleImageSrc: "/images/shlok.png",
-              name: "SHLOK SHARMA (@shawarma)",
-              description: "CORE | Embedded Systems | IOT",
-              instagramLink: "https://instagram.com/shlok_shawarma",
-              githubLink: "https://github.com/shloksharma273",
-              linkedinLink: "https://www.linkedin.com/in/shlok-sharma-b42320264/",
-            },
-            {
-              circleImageSrc: "/images/prakhar.png",
-              name: "PRAKHAR SHARMA (@pyarakhar)",
-              description: "CORE | Web Development",
-              instagramLink: "https://instagram.com/pyarakhar",
-              githubLink: "https://github.com/prakhar1535",
-              linkedinLink: "https://www.linkedin.com/in/prakhar1535/",
-            },
-            {
-              circleImageSrc: "/images/mitanshu.png",
-              name: "MITANSHU (@suus)",
-              description: "CORE | ROS",
-              instagramLink: "https://instagram.com/mitanshu._.05",
-              githubLink: "https://github.com/mitanshu-2004",
-              linkedinLink: "https://www.linkedin.com/in/mitanshu-goel-177624248/",
-            },
+           
+           
+          
 
           ]}
         />

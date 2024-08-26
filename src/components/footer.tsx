@@ -55,16 +55,14 @@ const Footer = () => {
                   Follow Us
                 </Typography>
                 <Box sx={{ display: 'flex', gap: '1rem' }}>
-                  <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" color="inherit">
-                    <Facebook />
-                  </Link>
-                  <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" color="inherit">
+                  
+                  <Link href="https://x.com/atom_robotics_?lang=en&mx=2" target="_blank" rel="noopener noreferrer" color="inherit">
                     <Twitter />
                   </Link>
-                  <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" color="inherit">
+                  <Link href=" https://www.instagram.com/a.t.o.m_robotics_lab/" target="_blank" rel="noopener noreferrer" color="inherit">
                     <Instagram />
                   </Link>
-                  <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" color="inherit">
+                  <Link href="https://www.linkedin.com/company/a-t-o-m-robotics-lab/" target="_blank" rel="noopener noreferrer" color="inherit">
                     <LinkedIn />
                   </Link>
                 </Box>

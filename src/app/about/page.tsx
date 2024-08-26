@@ -162,7 +162,7 @@ const About = () => {
             },
             {
               circleImageSrc: "/images/prakhar.png",
-              name: "PRAKHAR SHARMA (@pyarakhar))",
+              name: "PRAKHAR SHARMA (@pyarakhar)",
               description: "CORE | Web Development",
               instagramLink: "https://instagram.com/pyarakhar",
               githubLink: "https://github.com/prakhar1535",

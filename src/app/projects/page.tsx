@@ -36,12 +36,12 @@ const Projects = () => {
     {
       title: "Omnidrive AMR",
       description: "ROS | OpenCV | Humanoid Control",
-      bgImage: "bg-[url('/path/to/image6.jpg')]",
+      bgImage: "bg-[url('/project-thumbnails/omnidrive.jpg')]",
     },
     {
       title: "Swarm Bots",
       description: "ROS | OpenCV | Gazebo | Robot-Perception",
-      bgImage: "bg-[url('/path/to/image7.jpg')]",
+      bgImage: "bg-[url('/project-thumbnails/swarm-bot.jpeg')]",
     },
     {
       title: "MR Robot GUI",
@@ -51,7 +51,7 @@ const Projects = () => {
     {
       title: "Robotic Arm GUI",
       description: "ROS | OpenCV | Gazebo | Robot-Perception",
-      bgImage: "bg-[url('/path/to/image9.jpg')]",
+      bgImage: "bg-[url('/project-thumbnails/robotic-arm-gui.jpg')]",
     },
     {
         title: "Line Follower",

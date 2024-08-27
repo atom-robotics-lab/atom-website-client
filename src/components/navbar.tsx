@@ -76,7 +76,14 @@ const Navbar = () => {
     >
       <Toolbar sx={{ justifyContent: "space-between", width: "100%" }}>
         {/* Logo */}
-        <Box component="img" src="/logo_1.jpg" alt="Logo" sx={{ height: 70 }} />
+        {!toggle && (
+          <Box
+            component="img"
+            src="/logo_1.jpg"
+            alt="Logo"
+            sx={{ height: 70, ml: isSmallScreen ? 2 : 0 }}
+          />
+        )}
 
         {/* Navbar Links */}
         {isSmallScreen ? (
@@ -91,7 +98,12 @@ const Navbar = () => {
             >
               <MenuIcon />
             </IconButton>
-            <Drawer anchor="left" open={toggle} onClose={toggleDrawer(false)}>
+            <Drawer
+              anchor="right"
+              open={toggle}
+              sx={{ "& .MuiDrawer-paper": { backgroundColor: "#0d47a1" } }}
+              onClose={toggleDrawer(false)}
+            >
               <List>
                 {[
                   "Home",
@@ -107,7 +119,7 @@ const Navbar = () => {
                     key={index}
                     onClick={() => handleNavigation(`/${text.toLowerCase()}`)}
                   >
-                    <ListItemText primary={text} />
+                    <ListItemText primary={text} sx={{ color: "#fff" }} />
                   </ListItem>
                 ))}
                 <ListItem
@@ -198,4 +210,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

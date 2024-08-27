@@ -1,17 +1,27 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { Toolbar, Box, Button, IconButton } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import { useTheme, useMediaQuery } from '@mui/material';
-import { useRouter } from 'next/navigation';
+import React, { useState, useEffect } from "react";
+import {
+  Toolbar,
+  Box,
+  Button,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useTheme, useMediaQuery } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-  const isMediumScreen = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.between("sm", "md"));
   const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,84 +32,130 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  const handleNavigation = (path:any) => {
+  const handleNavigation = (path: string) => {
     router.push(path);
   };
+
+  const toggleDrawer =
+    (open: boolean) =>
+    (event: React.KeyboardEvent | React.MouseEvent | React.TouchEvent) => {
+      if (
+        event.type === "keydown" &&
+        (event as React.KeyboardEvent).key === "Tab"
+      ) {
+        return;
+      }
+      setToggle(open);
+    };
 
   return (
     <Box
       sx={{
-        position: 'fixed',
+        position: "fixed",
         top: 0,
         right: 0,
         left: 0,
         zIndex: 1300,
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        backgroundColor: isScrolled ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
-        backdropFilter: isScrolled ? 'blur(10px)' : 'none',
-        transition: 'background-color 0.3s, backdrop-filter 0.3s',
+        width: "100%",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.5)" : "transparent",
+        backdropFilter: isScrolled ? "blur(10px)" : "none",
+        transition: "background-color 0.3s, backdrop-filter 0.3s",
         py: 1,
-        px: isSmallScreen || isMediumScreen ? '1rem' : '6rem',
+        px: isSmallScreen || isMediumScreen ? "1rem" : "6rem",
       }}
     >
-      <Toolbar sx={{ justifyContent: 'space-between', width: '100%' }}>
+      <Toolbar sx={{ justifyContent: "space-between", width: "100%" }}>
         {/* Logo */}
         <Box component="img" src="/logo_1.jpg" alt="Logo" sx={{ height: 70 }} />
 
         {/* Navbar Links */}
         {isSmallScreen ? (
-          <IconButton
-            color="inherit"
-            edge="start"
-            aria-label="menu"
-            sx={{ ml: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+          <>
+            <IconButton
+              color="inherit"
+              edge="start"
+              aria-label="menu"
+              sx={{ ml: 2 }}
+              onClick={toggleDrawer(true)}
+              onTouchStart={toggleDrawer(true)}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Drawer anchor="left" open={toggle} onClose={toggleDrawer(false)}>
+              <List>
+                {[
+                  "Home",
+                  "About",
+                  "Achievements",
+                  "Projects",
+                  "Blogs",
+                  "Wiki",
+                  "Download",
+                ].map((text, index) => (
+                  <ListItem
+                    button
+                    key={index}
+                    onClick={() => handleNavigation(`/${text.toLowerCase()}`)}
+                  >
+                    <ListItemText primary={text} />
+                  </ListItem>
+                ))}
+                <ListItem
+                  button
+                  component="a"
+                  href="https://linktr.ee/a.t.o.m_robotics_lab"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ListItemText primary="Get in touch" />
+                </ListItem>
+              </List>
+            </Drawer>
+          </>
         ) : (
-          <Box sx={{ display: 'flex' }}>
+          <Box sx={{ display: "flex" }}>
             <Button
               color="inherit"
               sx={{ mx: 2 }}
-              onClick={() => handleNavigation('/home')}
+              onClick={() => handleNavigation("/home")}
             >
               Home
             </Button>
             <Button
               color="inherit"
               sx={{ mx: 2 }}
-              onClick={() => handleNavigation('/about')}
+              onClick={() => handleNavigation("/about")}
             >
               About
             </Button>
             <Button
               color="inherit"
               sx={{ mx: 2 }}
-              onClick={() => handleNavigation('/achievements')}
+              onClick={() => handleNavigation("/achievements")}
             >
               Achievements
             </Button>
             <Button
               color="inherit"
               sx={{ mx: 2 }}
-              onClick={() => handleNavigation('/projects')}
+              onClick={() => handleNavigation("/projects")}
             >
               Projects
             </Button>
             <Button
               color="inherit"
               sx={{ mx: 2 }}
-              onClick={() => handleNavigation('/blogs')}
+              onClick={() => handleNavigation("/blogs")}
             >
               Blogs
             </Button>
@@ -115,7 +171,7 @@ const Navbar = () => {
             <Button
               color="inherit"
               sx={{ mx: 2 }}
-              onClick={() => handleNavigation('/download')}
+              onClick={() => handleNavigation("/download")}
             >
               Download
             </Button>
@@ -124,8 +180,8 @@ const Navbar = () => {
               sx={{
                 mx: 2,
                 borderRadius: "32px",
-                background: '#0d47a1',
-                color: 'white',
+                background: "#0d47a1",
+                color: "white",
                 padding: "0.8rem 1rem",
               }}
               href="https://linktr.ee/a.t.o.m_robotics_lab"
@@ -142,3 +198,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

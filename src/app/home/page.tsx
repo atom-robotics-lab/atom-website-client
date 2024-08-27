@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Box, Button, Typography } from '@mui/material';
+import ReactPlayer from 'react-player';
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
@@ -24,25 +25,23 @@ const Home = () => {
       }}
     >
       {/* Background Video */}
-      <Box
-        component="video"
-        autoPlay
+      <ReactPlayer
+        url="/4.mp4"
+        playing={true}
         loop
         muted
-        sx={{
+        playsinline
+        width="100%"
+        height="100%"
+        style={{
           position: 'absolute',
           top: 0,
           left: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
           zIndex: -1,
-          opacity: 0.5,  // Adjust opacity for background video
+          opacity: 0.5,  
+          
         }}
-      >
-        <source src="/4.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </Box>
+      />
 
       {/* Content */}
       <Typography

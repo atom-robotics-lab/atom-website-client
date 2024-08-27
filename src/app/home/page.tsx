@@ -18,7 +18,13 @@ const Home = () => {
 
   return (
     <>
-      <Popup isOpen={isPopupOpen} onClose={closePopup} />
+      <Popup isOpen={isPopupOpen} onClose={closePopup}>
+        {/* Yaha apna content dal lo */}
+        <h2 id="popup-title" className="text-xl text-gray-700 font-bold mb-4">Orientation Notice</h2>
+        <h2 className="text-xl text-gray-700 font-semibold mb-2">Custom Content</h2>
+        <p className="text-gray-700 mb-4">The orientation is scheduled for September 7th.</p>
+        <img src="https://via.placeholder.com/150" alt="Placeholder" className="mx-auto" />
+      </Popup>
 
       <Box
         sx={{

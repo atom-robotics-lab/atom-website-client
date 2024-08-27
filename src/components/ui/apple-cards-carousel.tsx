@@ -2,30 +2,50 @@ import React, { useEffect, useRef, useState, createContext, useContext } from "r
 import { IconArrowNarrowLeft, IconArrowNarrowRight, IconX } from "@tabler/icons-react";
 import { cn } from "./lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import Image, { ImageProps } from "next/image";
+import Image from "next/image";
 import { useOutsideClick } from "../hooks/use-outside-click";
 
+// Types for Carousel and Card
 interface CarouselProps {
   items: JSX.Element[];
-  initialScroll?: number;
+  startIndex?: number; // Change this to make `startIndex` optional
 }
-
 type Card = {
   src: string;
   title: string;
   category: string;
   content: React.ReactNode;
+  author: string; // Add this
+  date: string;   // Add this
 };
 
 export const CarouselContext = createContext<{
   onCardClose: (index: number) => void;
   currentIndex: number;
+  carouselRef: React.RefObject<HTMLDivElement>;
 }>({
   onCardClose: () => {},
   currentIndex: 0,
+  carouselRef: { current: null }
 });
 
-export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
+type CardType = {
+  src: string;
+  title: string;
+  category: string;
+  content: React.ReactNode;
+  author: string; // Ensure these properties are included
+  date: string;
+};
+
+interface CardProps {
+  card: CardType;
+  index: number;
+  layout?: boolean;
+  onClose?: () => void; // Add this if needed
+}
+
+export const Carousel: React.FC<CarouselProps> = ({ items, startIndex = 0 }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -34,10 +54,10 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
   useEffect(() => {
     if (carouselRef.current) {
-      carouselRef.current.scrollLeft = initialScroll;
+      carouselRef.current.scrollLeft = startIndex * 300; // Adjust based on card width
       checkScrollability();
     }
-  }, [initialScroll]);
+  }, [startIndex]);
 
   const checkScrollability = () => {
     if (carouselRef.current) {
@@ -49,40 +69,18 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
   const scrollLeft = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
+      carouselRef.current.scrollBy({ left: -300, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
     if (carouselRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
-      const maxScroll = scrollWidth - clientWidth;
-      const newScrollLeft = Math.min(scrollLeft + 300, maxScroll);
-      carouselRef.current.scrollTo({ left: newScrollLeft, behavior: "smooth" });
-      setRightButtonClicked(true); // Update state to indicate the button has been clicked
-      checkScrollability();
+      carouselRef.current.scrollBy({ left: 300, behavior: 'smooth' });
     }
   };
-
-  const handleCardClose = (index: number) => {
-    if (carouselRef.current) {
-      const cardWidth = isMobile() ? 230 : 384;
-      const gap = isMobile() ? 4 : 8;
-      const scrollPosition = (cardWidth + gap) * (index + 1);
-      carouselRef.current.scrollTo({
-        left: scrollPosition,
-        behavior: "smooth",
-      });
-      setCurrentIndex(index);
-    }
-  };
-
-  const isMobile = () => window && window.innerWidth < 768;
 
   return (
-    <CarouselContext.Provider
-      value={{ onCardClose: handleCardClose, currentIndex }}
-    >
+    <CarouselContext.Provider value={{ carouselRef, onCardClose: () => {}, currentIndex: startIndex }}>
       <div className="relative w-full">
         <div
           className="flex w-full overflow-x-auto py-10 md:py-20 scroll-smooth"
@@ -91,35 +89,17 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           style={{ overflowX: 'hidden' }}
         >
           <div
-            className={cn(
-              "absolute right-0 z-[1000] h-auto w-[5%] overflow-hidden bg-gradient-to-l"
-            )}
+            className="absolute right-0 z-[1000] h-auto w-[5%] overflow-hidden bg-gradient-to-l"
           ></div>
-
-          <div
-            className={cn(
-              "flex flex-row justify-start gap-4 pl-4",
-              "max-w-7xl mx-auto"
-            )}
-          >
+          <div className="flex flex-row justify-start gap-4 pl-4 max-w-7xl mx-auto">
             {items.map((item, index) => (
               <motion.div
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    duration: 0.5,
-                    delay: 0.2 * index,
-                    ease: "easeOut",
-                    once: true,
-                  },
-                }}
-                key={"card" + index}
+                key={index}
                 className="last:pr-[5%] md:last:pr-[33%] rounded-3xl"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
               >
                 {item}
               </motion.div>
@@ -147,6 +127,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   );
 };
 
+
 export const Card = ({
   card,
   index,
@@ -158,7 +139,7 @@ export const Card = ({
 }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const { onCardClose, currentIndex } = useContext(CarouselContext);
+  const { onCardClose, currentIndex, carouselRef } = useContext(CarouselContext);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -185,7 +166,20 @@ export const Card = ({
 
   const handleClose = () => {
     setOpen(false);
+    if (carouselRef.current) {
+      const cardWidth = isMobile() ? 230 : 384; // Adjust as necessary
+      const gap = isMobile() ? 4 : 8;
+      const scrollPosition = (cardWidth + gap) * currentIndex;
+      carouselRef.current.scrollTo({
+        left: scrollPosition,
+        behavior: "smooth",
+      });
+    }
     onCardClose(index);
+  };
+
+  const isMobile = () => {
+    return window && window.innerWidth < 768;
   };
 
   return (
@@ -226,6 +220,10 @@ export const Card = ({
               >
                 {card.title}
               </motion.p>
+              <div className="text-base font-medium text-gray-600 dark:text-gray-400 mt-2">
+                <p>{card.author}</p>
+                <p>{card.date}</p>
+              </div>
               <div className="py-10">{card.content}</div>
             </motion.div>
           </div>
@@ -239,55 +237,25 @@ export const Card = ({
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
         <div className="relative z-40 p-8">
           <motion.p
-            layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-white text-sm md:text-base font-medium font-sans text-left"
-          >
-            {card.category}
-          </motion.p>
-          <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="text-white text-xl md:text-3xl font-semibold max-w-xs text-left [text-wrap:balance] font-sans mt-2"
+            className="text-3xl font-semibold font-sans"
           >
             {card.title}
           </motion.p>
         </div>
-        <BlurImage
-          src={card.src}
-          alt={card.title}
-          fill
-          className="object-cover inset-0"
-        />
+        <div className="absolute inset-0 overflow-hidden">
+          <Image
+            src={card.src}
+            alt={card.title}
+            layout="fill"
+            objectFit="cover"
+            className="transition-transform duration-300 ease-in-out"
+          />
+        </div>
       </motion.button>
     </>
   );
 };
 
-export const BlurImage = ({
-  height,
-  width,
-  src,
-  className,
-  alt,
-  ...rest
-}: ImageProps) => {
-  const [isLoading, setLoading] = useState(true);
-  return (
-    <Image
-      className={cn(
-        "transition duration-300",
-        isLoading ? "blur-sm" : "blur-0",
-        className
-      )}
-      onLoad={() => setLoading(false)}
-      src={src}
-      width={width}
-      height={height}
-      loading="lazy"
-      decoding="async"
-      blurDataURL={typeof src === "string" ? src : undefined}
-      alt={alt ? alt : "Background of a beautiful view"}
-      style={{ objectFit: 'cover', width: '100%', height: '100%' }} // Ensure the image covers the container
-      {...rest}
-    />
-  );
-};
+
+

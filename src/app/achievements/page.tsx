@@ -1,19 +1,31 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid"; // Adjust import path if necessary
 
-const fixedSizeStyle = {
-  width: '300px', // Adjust width as needed
-  height: '200px', // Adjust height as needed
-  display: 'flex', // Use flex to center content
-  justifyContent: 'center', // Center horizontally
-  alignItems: 'center', // Center vertically
-  overflow: 'hidden', // Hide overflow to crop image
+const fixedSizeStyle: CSSProperties = {
+  width: '100%', // Full width on mobile
+  height: '180px', // Smaller height for mobile
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  overflow: 'hidden',
+  borderRadius: '15px',
 };
 
-const imageStyle = {
-  width: '100%', // Make sure the image fills the container
-  height: '100%', // Make sure the image fills the container
-  objectFit: 'cover', // Crop the image to fit the container
+const imageStyle: CSSProperties = {
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover',
+  borderRadius: '15px',
+};
+
+const textStyle = {
+  title: {
+    fontSize: '1.25rem', // Default title size
+    fontWeight: 'bold',
+  },
+  description: {
+    fontSize: '1rem', // Default description size
+  },
 };
 
 const achievements = [
@@ -93,19 +105,19 @@ const achievements = [
 
 const AchievementsPage = () => {
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center py-32 px-8">
-      <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-        <span className="text-blue-500">A.T.O.M Robotics Lab</span> <br /> Our Journey of Excellence
+    <div className="min-h-screen bg-black text-white flex flex-col items-center py-16 px-4 sm:px-8">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center">
+        <span className="text-blue-800">A.T.O.M Robotics Lab</span> <br /> Our Journey of Excellence
       </h1>
-      <BentoGrid className="w-full max-w-6xl">
+      <BentoGrid className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {achievements.map((achievement, index) => (
           <BentoGridItem
             key={index}
-            title={achievement.title}
-            description={achievement.description}
+            title={<div style={textStyle.title} className="text-lg md:text-xl lg:text-2xl text-white">{achievement.title}</div>}
+            description={<div style={textStyle.description} className="text-base md:text-lg lg:text-xl text-white">{achievement.description}</div>}
             header={achievement.header}
             icon={<div style={fixedSizeStyle}>{achievement.icon}</div>}
-            className="bg-blue-100"
+            className="bg-blue-800 p-4"
           />
         ))}
       </BentoGrid>

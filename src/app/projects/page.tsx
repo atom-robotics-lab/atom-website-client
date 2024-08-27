@@ -56,17 +56,17 @@ const Projects = () => {
     {
         title: "Line Follower",
         description: "ROS | OpenCV | Gazebo | Robot-Perception",
-        bgImage: "bg-[url('/path/to/image9.jpg')]",
+        bgImage: "bg-[url('/project-thumbnails/lfr.png')]",
       },
       {
         title: "Person Follower",
         description: "ROS | OpenCV | Gazebo | Robot-Perception",
-        bgImage: "bg-[url('/path/to/image9.jpg')]",
+        bgImage: "bg-[url('/project-thumbnails/person-follower.png')]",
       },
       {
         title: "Perception Pipeline",
         description: "ROS | OpenCV | Gazebo | Robot-Perception",
-        bgImage: "bg-[url('/path/to/image9.jpg')]",
+        bgImage: "bg-[url('/project-thumbnails/perception.png')]",
       },
   ];
 

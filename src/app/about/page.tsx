@@ -154,8 +154,8 @@ const About = () => {
               linkedinLink: "https://linkedin.com/in/deepanshgl",
             },
             {
-              circleImageSrc: "/images/akshar.png",
-              name: "AKSHAT (@hermonium)",
+              circleImageSrc: "/images/akshat.png",
+              name: "AKSHAT (@hominum)",
               description: "CORE | Embedded Systems | IOT",
               instagramLink: "https://instagram.com/akshat_sharma05",
               githubLink: "https://github.com/AkshatSharma05",

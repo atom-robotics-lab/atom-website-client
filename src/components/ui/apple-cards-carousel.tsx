@@ -1,23 +1,24 @@
+// apple-cards-carousel.tsx
 import React, { useEffect, useRef, useState, createContext, useContext } from "react";
 import { IconArrowNarrowLeft, IconArrowNarrowRight, IconX } from "@tabler/icons-react";
-import { cn } from "./lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useOutsideClick } from "../hooks/use-outside-click";
 
 // Types for Carousel and Card
-interface CarouselProps {
-  items: JSX.Element[];
-  startIndex?: number; // Change this to make `startIndex` optional
-}
-type Card = {
+export interface CardProps {
   src: string;
   title: string;
   category: string;
   content: React.ReactNode;
-  author: string; // Add this
-  date: string;   // Add this
-};
+  author: string;
+  date: string;
+}
+
+export interface CarouselProps {
+  items: CardProps[];
+  startIndex?: number;
+}
 
 export const CarouselContext = createContext<{
   onCardClose: (index: number) => void;
@@ -29,20 +30,11 @@ export const CarouselContext = createContext<{
   carouselRef: { current: null }
 });
 
-type CardType = {
-  src: string;
-  title: string;
-  category: string;
-  content: React.ReactNode;
-  author: string; // Ensure these properties are included
-  date: string;
-};
-
-interface CardProps {
-  card: CardType;
+interface CardPropsExtended {
+  card: CardProps;
   index: number;
   layout?: boolean;
-  onClose?: () => void; // Add this if needed
+  onClose?: () => void;
 }
 
 export const Carousel: React.FC<CarouselProps> = ({ items, startIndex = 0 }) => {
@@ -85,21 +77,15 @@ export const Carousel: React.FC<CarouselProps> = ({ items, startIndex = 0 }) => 
           ref={carouselRef}
           onScroll={checkScrollability}
         >
-          <div
-            className="absolute right-0 z-[1000] h-auto w-[5%] overflow-hidden bg-gradient-to-l"
-          ></div>
+          <div className="absolute right-0 z-[1000] h-auto w-[5%] overflow-hidden bg-gradient-to-l" />
           <div className="flex flex-row justify-start gap-4 pl-4 max-w-7xl mx-auto">
             {items.map((item, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="last:pr-[5%] md:last:pr-[33%] rounded-3xl"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
               >
-                {item}
-              </motion.div>
+                <Card card={item} index={index} />
+              </div>
             ))}
           </div>
         </div>
@@ -124,15 +110,11 @@ export const Carousel: React.FC<CarouselProps> = ({ items, startIndex = 0 }) => 
   );
 };
 
-
-export const Card = ({
+export const Card: React.FC<CardPropsExtended> = ({
   card,
   index,
   layout = false,
-}: {
-  card: Card;
-  index: number;
-  layout?: boolean;
+  onClose
 }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -172,6 +154,7 @@ export const Card = ({
         behavior: "smooth",
       });
     }
+    if (onClose) onClose();
     onCardClose(index);
   };
 
@@ -253,6 +236,3 @@ export const Card = ({
     </>
   );
 };
-
-
-

@@ -162,6 +162,15 @@ const About = () => {
               linkedinLink: "https://www.linkedin.com/in/akshat-sharma-166932161/",
             },
             {
+              circleImageSrc: "/images/tanmay.jpg",
+              name: "TANMAY SINGH (@rubber_giant)",
+              description: "CORE | ROS",
+              instagramLink: "https://instagram.com/feels_on_wheels",
+              githubLink: "https://github.com/rubber-giant",
+              linkedinLink: "https://www.linkedin.com/in/tanmay-singh-07b539291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            },
+
+            {
               circleImageSrc: "/images/anurag.png",
               name: "ANURAG (@augi)",
               description: "CORE | ROS",

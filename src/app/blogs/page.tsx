@@ -71,43 +71,42 @@ const Blogs: React.FC = () => {
   };
 
   // In Blogs.tsx
-// In Blogs.tsx
-const carouselItems = repeatedBlogs.map((blog, index) => (
-  <Card
-    key={`${blog.heading}-${index}`}
-    card={{
-      src: blog.sections[0]?.image || '/placeholder-image.jpg',
-      title: blog.sections[0]?.title || blog.heading,
-      category: `${blog.date} | ${blog.author}`,
-      content: (
-        <>
-          {blog.sections.map((section, sectionIndex) => (
-            <div key={sectionIndex} className="mb-8">
-              {sectionIndex > 0 && (
-                <h2 className="text-3xl sm:text-4xl font-semibold mb-2 text-blue-500">{section.title}</h2>
-              )}
-              {section.image && (
-                <div className="w-full mb-4 card-img-container">
-                  <img
-                    src={section.image}
-                    alt={section.title}
-                    className="w-full h-auto object-contain"
-                  />
-                </div>
-              )}
-              <p className={`${poppinsParagraph.className} text-black dark:text-white`}>{section.content}</p>
-            </div>
-          ))}
-        </>
-      ),
-      author: blog.author,
-      date: blog.date,
-    }}
-    index={index}
-    layout={true}
-    // Remove onClose if it's not part of Card props
-  />
-));
+  const carouselItems = repeatedBlogs.map((blog, index) => (
+    <Card
+      key={`${blog.heading}-${index}`}
+      card={{
+        src: blog.sections[0]?.image || '/placeholder-image.jpg',
+        title: blog.sections[0]?.title || blog.heading,
+        category: `${blog.date} | ${blog.author}`,
+        content: (
+          <>
+            {blog.sections.map((section, sectionIndex) => (
+              <div key={sectionIndex} className="mb-8">
+                {sectionIndex > 0 && (
+                  <h2 className="text-3xl sm:text-4xl font-semibold mb-2 text-blue-500">{section.title}</h2>
+                )}
+                {section.image && (
+                  <div className="w-full mb-4 card-img-container">
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                )}
+                <p className={`${poppinsParagraph.className} text-black dark:text-white`}>{section.content}</p>
+              </div>
+            ))}
+          </>
+        ),
+        author: blog.author,
+        date: blog.date,
+      }}
+      index={index}
+      layout={true}
+      // Remove onClose if it's not part of Card props
+    />
+  ));
 
 
   return (

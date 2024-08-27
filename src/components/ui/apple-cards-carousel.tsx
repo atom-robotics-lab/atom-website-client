@@ -8,10 +8,8 @@ import { useOutsideClick } from "../hooks/use-outside-click";
 // Types for Carousel and Card
 interface CarouselProps {
   items: JSX.Element[];
-  initialScroll?: number;
-  startIndex?: number;
+  startIndex?: number; // Change this to make `startIndex` optional
 }
-
 type Card = {
   src: string;
   title: string;
@@ -20,6 +18,16 @@ type Card = {
   author: string; // Add this
   date: string;   // Add this
 };
+
+export const CarouselContext = createContext<{
+  onCardClose: (index: number) => void;
+  currentIndex: number;
+  carouselRef: React.RefObject<HTMLDivElement>;
+}>({
+  onCardClose: () => {},
+  currentIndex: 0,
+  carouselRef: { current: null }
+});
 
 type CardType = {
   src: string;
@@ -37,20 +45,6 @@ interface CardProps {
   onClose?: () => void; // Add this if needed
 }
 
-
-
-// Carousel Context
-export const CarouselContext = createContext<{
-  onCardClose: (index: number) => void;
-  currentIndex: number;
-  carouselRef: React.RefObject<HTMLDivElement>;
-}>({
-  onCardClose: () => {},
-  currentIndex: 0,
-  carouselRef: { current: null }
-});
-
-// Carousel Component
 export const Carousel: React.FC<CarouselProps> = ({ items, startIndex = 0 }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -96,12 +90,16 @@ export const Carousel: React.FC<CarouselProps> = ({ items, startIndex = 0 }) => 
           ></div>
           <div className="flex flex-row justify-start gap-4 pl-4 max-w-7xl mx-auto">
             {items.map((item, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="last:pr-[5%] md:last:pr-[33%] rounded-3xl"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
               >
                 {item}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -126,8 +124,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items, startIndex = 0 }) => 
   );
 };
 
-// Card Component
-// In apple-cards-carousel.tsx
+
 export const Card = ({
   card,
   index,
@@ -256,7 +253,6 @@ export const Card = ({
     </>
   );
 };
-
 
 
 

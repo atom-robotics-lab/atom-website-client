@@ -29,12 +29,15 @@ interface Blog {
 }
 
 const Blogs: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<number>(1);
   const [blogs, setBlogs] = useState<Blog[]>([]);
-  const itemsPerPage = 6;
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(1); // Start from 2nd card
 
   useEffect(() => {
     const fetchBlogs = async () => {
+      setIsLoading(true);
+      setError(null);
       try {
         const response = await fetch('/blogs/test.json');
         if (!response.ok) {
@@ -45,19 +48,67 @@ const Blogs: React.FC = () => {
         if (Array.isArray(data)) {
           setBlogs(data);
         } else {
-          console.error('Expected an array but received:', data);
+          throw new Error('Expected an array but received: ' + JSON.stringify(data));
         }
       } catch (error) {
         console.error('Error fetching blog data:', error);
+        setError('Failed to load blogs. Please try again later.');
+      } finally {
+        setIsLoading(false);
       }
     };
 
     fetchBlogs();
   }, []);
 
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentBlogs = useMemo(() => blogs.slice(indexOfFirstItem, indexOfLastItem), [indexOfFirstItem, indexOfLastItem, blogs]);
+  const repeatedBlogs = useMemo(() => {
+    const repeated = [...blogs, ...blogs, ...blogs, ...blogs];
+    return repeated;
+  }, [blogs]);
+
+  const handleModalClose = () => {
+    setCurrentIndex(1); // Reset to 2nd card
+  };
+
+  // In Blogs.tsx
+// In Blogs.tsx
+const carouselItems = repeatedBlogs.map((blog, index) => (
+  <Card
+    key={`${blog.heading}-${index}`}
+    card={{
+      src: blog.sections[0]?.image || '/placeholder-image.jpg',
+      title: blog.sections[0]?.title || blog.heading,
+      category: `${blog.date} | ${blog.author}`,
+      content: (
+        <>
+          {blog.sections.map((section, sectionIndex) => (
+            <div key={sectionIndex} className="mb-8">
+              {sectionIndex > 0 && (
+                <h2 className="text-3xl sm:text-4xl font-semibold mb-2 text-blue-500">{section.title}</h2>
+              )}
+              {section.image && (
+                <div className="w-full mb-4 card-img-container">
+                  <img
+                    src={section.image}
+                    alt={section.title}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              )}
+              <p className={`${poppinsParagraph.className} text-black dark:text-white`}>{section.content}</p>
+            </div>
+          ))}
+        </>
+      ),
+      author: blog.author,
+      date: blog.date,
+    }}
+    index={index}
+    layout={true}
+    // Remove onClose if it's not part of Card props
+  />
+));
+
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center py-32 px-4 sm:px-8">
@@ -69,42 +120,17 @@ const Blogs: React.FC = () => {
         Get a glimpse of how our society functions with these fun blogs where we cover our experiences in competitions, project building, hackathons, and tons of other events.
       </p>
 
-      <Carousel
-        items={currentBlogs.map((blog, index) => (
-          <Card
-            key={blog.heading}
-            card={{
-              src: blog.sections[0]?.image || '',
-              title: blog.sections[0]?.title || blog.heading,
-              category: `${blog.date} | ${blog.author}`, // Combine date and author
-              content: (
-                <>
-                  {blog.sections.map((section, sectionIndex) => (
-                    <div key={sectionIndex} className="mb-8">
-                      {/* Only display the heading for sections after the first one */}
-                      {sectionIndex > 0 && (
-                        <h2 className="text-3xl sm:text-4xl font-semibold mb-2 text-blue-500">{section.title}</h2>
-                      )}
-                      {section.image && (
-                        <div className="w-full mb-4 card-img-container">
-                          <img
-                            src={section.image}
-                            alt={section.title}
-                            className="w-full h-auto object-contain"
-                          />
-                        </div>
-                      )}
-                      <p className={`${poppinsParagraph.className} text-white`}>{section.content}</p>
-                    </div>
-                  ))}
-                </>
-              ),
-            }}
-            index={index}
-            layout={true}
-          />
-        ))}
-      />
+      {isLoading ? (
+        <div className="text-2xl">Loading blogs...</div>
+      ) : error ? (
+        <div className="text-2xl text-red-500">{error}</div>
+      ) : blogs.length > 0 ? (
+        <div className="w-full">
+          <Carousel items={carouselItems} startIndex={currentIndex} />
+        </div>
+      ) : (
+        <div className="text-2xl">No blogs available at the moment.</div>
+      )}
     </div>
   );
 };

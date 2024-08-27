@@ -10,7 +10,7 @@ const About = () => {
           <div className="bg-blue-600 text-white p-8 md:p-10 rounded-md text-center w-80 h-72 md:w-96 md:h-80 flex items-center justify-center mt-2 md:mt-6">
             <div>
               <p className="text-4xl font-bold mb-5">WE ARE A.T.O.M</p>
-              <p className="text-xl">A SOCIETY | COMMUNITY OF ROBOTICS BASED IN DELHI</p>
+              <p className="text-xl">A COMMUNITY OF ROBOTICS BASED IN DELHI</p>
             </div>
           </div>
         </div>

@@ -79,7 +79,7 @@ const Navbar = () => {
         {!toggle && (
           <Box
             component="img"
-            src="/logo_1.jpg"
+            src="/logo_1.png"
             alt="Logo"
             sx={{ height: 70, ml: isSmallScreen ? 2 : 0 }}
           />

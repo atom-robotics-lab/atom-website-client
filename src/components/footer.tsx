@@ -20,7 +20,7 @@ const Footer = () => {
               Where to find us?
             </Typography>
             <Typography variant="body2">
-              ECE Block Basement
+              ECE Block third floor
               <br />
               Maharaja Agrasen Institute of Technology
               <br />
@@ -35,16 +35,22 @@ const Footer = () => {
                 <Typography variant="h6" gutterBottom>
                   Sitemap
                 </Typography>
-                <Link href="#home" color="inherit" underline="hover" sx={{ display: 'block', marginBottom: '0.5rem' }}>
+                <Link href="/" color="inherit" underline="hover" sx={{ display: 'block', marginBottom: '0.5rem' }}>
                   Home
                 </Link>
-                <Link href="#about" color="inherit" underline="hover" sx={{ display: 'block', marginBottom: '0.5rem' }}>
+                <Link href="/about" color="inherit" underline="hover" sx={{ display: 'block', marginBottom: '0.5rem' }}>
                   About
                 </Link>
-                <Link href="#projects" color="inherit" underline="hover" sx={{ display: 'block', marginBottom: '0.5rem' }}>
+                <Link href="/projects" color="inherit" underline="hover" sx={{ display: 'block', marginBottom: '0.5rem' }}>
                   Projects
                 </Link>
-                <Link href="#contact" color="inherit" underline="hover" sx={{ display: 'block', marginBottom: '0.5rem' }}>
+                <Link href="/achievements" color="inherit" underline="hover" sx={{ display: 'block', marginBottom: '0.5rem' }}>
+                  Achievements
+                </Link>
+                <Link href="/blogs" color="inherit" underline="hover" sx={{ display: 'block', marginBottom: '0.5rem' }}>
+                  Blogs
+                </Link>
+                <Link href="/contact" color="inherit" underline="hover" sx={{ display: 'block', marginBottom: '0.5rem' }}>
                   Contact
                 </Link>
               </Grid>
@@ -55,11 +61,10 @@ const Footer = () => {
                   Follow Us
                 </Typography>
                 <Box sx={{ display: 'flex', gap: '1rem' }}>
-                  
                   <Link href="https://x.com/atom_robotics_?lang=en&mx=2" target="_blank" rel="noopener noreferrer" color="inherit">
                     <Twitter />
                   </Link>
-                  <Link href=" https://www.instagram.com/a.t.o.m_robotics_lab/" target="_blank" rel="noopener noreferrer" color="inherit">
+                  <Link href="https://www.instagram.com/a.t.o.m_robotics_lab/" target="_blank" rel="noopener noreferrer" color="inherit">
                     <Instagram />
                   </Link>
                   <Link href="https://www.linkedin.com/company/a-t-o-m-robotics-lab/" target="_blank" rel="noopener noreferrer" color="inherit">
@@ -74,7 +79,7 @@ const Footer = () => {
                   We like to build Robots
                 </Typography>
                 <Typography variant="body2">
-                  A Robotics Society | Community
+                  A Robotics Community
                   <br />
                   based out of Delhi
                 </Typography>

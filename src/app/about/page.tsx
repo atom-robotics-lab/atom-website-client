@@ -138,19 +138,19 @@ const About = () => {
             },
             {
               circleImageSrc: "/images/akshar.png",
-              name: "AKSHAT (@hermonium)",
+              name: "AKSHAT (@hominum)",
               description: "CORE | Embedded Systems | IOT",
               instagramLink: "https://instagram.com/akshat_sharma05",
               githubLink: "https://github.com/AkshatSharma05",
               linkedinLink: "https://www.linkedin.com/in/akshat-sharma-166932161/",
             },
             {
-              circleImageSrc: "/images/anurag.png",
-              name: "ANURAG (@augi)",
+              circleImageSrc: "/images/tanmay.png",
+              name: "TANMAY SINGH (@rubber_giant)",
               description: "CORE | ROS",
-              instagramLink: "https://instagram.com/anuragchoudhury.xz",
-              githubLink: " https://github.com/anurag-choudhury",
-              linkedinLink: " https://www.linkedin.com/in/anurag-choudhury-124b29259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+              instagramLink: "https://instagram.com/feels_on_wheels",
+              githubLink: "https://github.com/rubber-giant",
+              linkedinLink: "https://www.linkedin.com/in/tanmay-singh-07b539291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
             },
             {
               circleImageSrc: "/images/shlok.png",
@@ -176,6 +176,14 @@ const About = () => {
               githubLink: "https://github.com/mitanshu-2004",
               linkedinLink: "https://www.linkedin.com/in/mitanshu-goel-177624248/",
             },
+            {
+              circleImageSrc: "/images/anurag.png",
+              name: "ANURAG (@augi)",
+              description: "CORE | ROS",
+              instagramLink: "https://instagram.com/anuragchoudhury.xz",
+              githubLink: " https://github.com/anurag-choudhury",
+              linkedinLink: " https://www.linkedin.com/in/anurag-choudhury-124b29259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            }
 
           ]}
         />

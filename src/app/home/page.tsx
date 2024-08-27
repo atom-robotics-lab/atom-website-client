@@ -13,7 +13,6 @@ const poppins = Poppins({
 const Home = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
 
-  const openPopup = () => setIsPopupOpen(true);
   const closePopup = () => setIsPopupOpen(false);
 
   return (
@@ -65,11 +64,11 @@ const Home = () => {
           component="h1"
           className={poppins.className}
           sx={{
-            fontSize: '5rem',
+            fontSize: { xs: '1.5rem', sm: '2rem', md: '3rem', lg: '4rem', xl: '5rem' },  // Adjusted responsive font size
             fontWeight: 'bold',
             color: '#ffff',
             textAlign: 'center',
-            marginBottom: '3rem',
+            marginBottom: { xs: '1.5rem', sm: '2rem', md: '3rem' },
             whiteSpace: 'nowrap',
             overflow: 'hidden',
             borderRight: '.15em solid #001ea5',
@@ -89,7 +88,7 @@ const Home = () => {
           sx={{
             display: 'flex',
             flexDirection: 'row',
-            gap: '2rem',
+            gap: { xs: '1rem', sm: '1.5rem', md: '2rem' },
             marginTop: '2rem',
             flexWrap: 'wrap',
             justifyContent: 'center',
@@ -101,7 +100,7 @@ const Home = () => {
               color: 'white',
               borderRadius: '20px',
               fontWeight: 'bold',
-              padding: '0.5rem 1rem',
+              padding: { xs: '0.5rem 1rem', sm: '0.5rem 1.25rem', md: '0.5rem 1.5rem' },
               '&:hover': {
                 background: '#0a3b6c',
               },
@@ -115,7 +114,7 @@ const Home = () => {
               color: 'white',
               borderRadius: '20px',
               fontWeight: 'bold',
-              padding: '0.5rem 1rem',
+              padding: { xs: '0.5rem 1rem', sm: '0.5rem 1.25rem', md: '0.5rem 1.5rem' },
               '&:hover': {
                 background: '#0a3b6c',
               },
@@ -126,16 +125,16 @@ const Home = () => {
         </Box>
 
         <style jsx>{`
-          @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-          }
+        @keyframes typing {
+          from { width: 0 }
+          to { width: 90% }
+        }
 
-          @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #001ea5; }
-          }
-        `}</style>
+        @keyframes blink-caret {
+          from, to { border-color: transparent }
+          50% { border-color: #001ea5; }
+        }
+      `}</style>
       </Box>
     </>
   );

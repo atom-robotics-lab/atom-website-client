@@ -94,7 +94,7 @@ const Blogs: React.FC = () => {
                           />
                         </div>
                       )}
-                      <p className={`${poppinsParagraph.className} text-white`}>{section.content}</p>
+                      <p className={`${poppinsParagraph.className} text-black`}>{section.content}</p>
                     </div>
                   ))}
                 </>

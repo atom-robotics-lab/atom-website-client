@@ -182,13 +182,6 @@ const Navbar = () => {
             </Button>
             <Button
               color="inherit"
-              sx={{ mx: 2 }}
-              onClick={() => handleNavigation("/download")}
-            >
-              Download
-            </Button>
-            <Button
-              color="inherit"
               sx={{
                 mx: 2,
                 borderRadius: "32px",

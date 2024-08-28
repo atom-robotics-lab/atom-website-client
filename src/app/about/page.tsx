@@ -123,7 +123,7 @@ const About = () => {
 
             {
               circleImageSrc: "/images/vansh.png",
-              name: "VANSH GUPTA (@gupta)",
+              name: "VANSH GUPTA (@vansh)",
               description: "CORE | CAD | IOT",
               instagramLink: "https://instagram.com/vanshgupta917",
               githubLink: "https://github.com/rule_keeper",

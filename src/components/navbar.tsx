@@ -158,7 +158,6 @@ const Navbar = () => {
             boxSizing: "border-box",
             width: "100%",
             height: "auto",
-            backgroundColor: "blue",
           },
         }}
         anchor="top"

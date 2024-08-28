@@ -1,204 +1,170 @@
 "use client";
-
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
+  AppBar,
   Toolbar,
-  Box,
+  Typography,
   Button,
   IconButton,
   Drawer,
   List,
   ListItem,
   ListItemText,
+  Box,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useTheme, useMediaQuery } from "@mui/material";
-import { useRouter } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+
+const navItems = ["Home", "About", "Blogs", "Achievements", "Projects"];
 
 const Navbar = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
-  const isMediumScreen = useMediaQuery(theme.breakpoints.between("sm", "md"));
-  const router = useRouter();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [toggle, setToggle] = useState(false);
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const handleNavigation = (path: string) => {
-    router.push(path);
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
   };
 
-  const toggleDrawer =
-    (open: boolean) =>
-    (event: React.KeyboardEvent | React.MouseEvent | React.TouchEvent) => {
-      if (
-        event.type === "keydown" &&
-        (event as React.KeyboardEvent).key === "Tab"
-      ) {
-        return;
-      }
-      setToggle(open);
-    };
+  const drawer = (
+    <AnimatePresence>
+      {mobileOpen && (
+        <motion.div
+          initial={{ y: "-100%" }}
+          animate={{ y: 0 }}
+          exit={{ y: "-100%" }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        >
+          <List>
+            {navItems.map((item) => (
+              <ListItem button key={item}>
+                <ListItemText
+                  primary={item}
+                  primaryTypographyProps={{ fontWeight: "bold" }}
+                />
+              </ListItem>
+            ))}
+          </List>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
 
   return (
-    <Box
+    <AppBar
+      position="static"
       sx={{
+        backgroundColor: "transparent",
         position: "fixed",
-        top: 0,
-        right: 0,
-        left: 0,
-        zIndex: 1300,
-        width: "100%",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.5)" : "transparent",
-        backdropFilter: isScrolled ? "blur(10px)" : "none",
-        transition: "background-color 0.3s, backdrop-filter 0.3s",
-        py: 1,
-        px: isSmallScreen || isMediumScreen ? "1rem" : "6rem",
+        zIndex: 9999999,
       }}
     >
-      <Toolbar sx={{ justifyContent: "space-between", width: "100%" }}>
-        {/* Logo */}
-        {!toggle && (
-          <Box
-            component="img"
-            src="/logo_1.png"
-            alt="Logo"
-            sx={{ height: 70, ml: isSmallScreen ? 2 : 0 }}
-          />
-        )}
+      <Toolbar sx={{ justifyContent: "space-between" }}>
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", sm: "block" },
+              fontWeight: "700",
+            }}
+          >
+            A.T.O.M ROBOTCS LAB{" "}
+          </Typography>
+        </motion.div>
 
-        {/* Navbar Links */}
-        {isSmallScreen ? (
-          <>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          {isMobile ? (
             <IconButton
               color="inherit"
+              aria-label="open drawer"
               edge="start"
-              aria-label="menu"
-              sx={{ ml: 2 }}
-              onClick={toggleDrawer(true)}
-              onTouchStart={toggleDrawer(true)}
+              onClick={handleDrawerToggle}
+              sx={{ display: { md: "none" } }}
             >
               <MenuIcon />
             </IconButton>
-            <Drawer
-              anchor="right"
-              open={toggle}
-              sx={{ "& .MuiDrawer-paper": { backgroundColor: "#0d47a1" } }}
-              onClose={toggleDrawer(false)}
-            >
-              <List>
-                {[
-                  "Home",
-                  "About",
-                  "Achievements",
-                  "Projects",
-                  "Blogs",
-                  "Wiki",
-                  "Download",
-                ].map((text, index) => (
-                  <ListItem
-                    button
-                    key={index}
-                    onClick={() => handleNavigation(`/${text.toLowerCase()}`)}
-                  >
-                    <ListItemText primary={text} sx={{ color: "#fff" }} />
-                  </ListItem>
-                ))}
-                <ListItem
-                  button
-                  component="a"
-                  href="https://linktr.ee/a.t.o.m_robotics_lab"
-                  target="_blank"
-                  rel="noopener noreferrer"
+          ) : (
+            <>
+              {navItems.map((item) => (
+                <motion.div
+                  key={item}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <ListItemText primary="Get in touch" />
-                </ListItem>
-              </List>
-            </Drawer>
-          </>
-        ) : (
-          <Box sx={{ display: "flex" }}>
-            <Button
-              color="inherit"
-              sx={{ mx: 2 }}
-              onClick={() => handleNavigation("/home")}
-            >
-              Home
-            </Button>
-            <Button
-              color="inherit"
-              sx={{ mx: 2 }}
-              onClick={() => handleNavigation("/about")}
-            >
-              About
-            </Button>
-            <Button
-              color="inherit"
-              sx={{ mx: 2 }}
-              onClick={() => handleNavigation("/achievements")}
-            >
-              Achievements
-            </Button>
-            <Button
-              color="inherit"
-              sx={{ mx: 2 }}
-              onClick={() => handleNavigation("/projects")}
-            >
-              Projects
-            </Button>
-            <Button
-              color="inherit"
-              sx={{ mx: 2 }}
-              onClick={() => handleNavigation("/blogs")}
-            >
-              Blogs
-            </Button>
-            <Button
-              color="inherit"
-              sx={{ mx: 2 }}
-              href="https://atom-robotics-lab.github.io/wiki/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Wiki
-            </Button>
-            <Button
-              color="inherit"
-              sx={{
-                mx: 2,
-                borderRadius: "32px",
-                background: "#0d47a1",
-                color: "white",
-                padding: "0.8rem 1rem",
-              }}
-              href="https://linktr.ee/a.t.o.m_robotics_lab"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Get in touch
-            </Button>
-          </Box>
-        )}
+                  <Button
+                    color="inherit"
+                    sx={{
+                      fontWeight: "bold",
+                      position: "relative",
+                      "&::after": {
+                        content: '""',
+                        position: "absolute",
+                        width: "0%",
+                        height: "2px",
+                        bottom: 0,
+                        left: "50%",
+                        backgroundColor: "white",
+                        transition: "all 0.3s ease",
+                      },
+                      "&:hover::after": {
+                        width: "100%",
+                        left: "0%",
+                      },
+                    }}
+                  >
+                    {item}
+                  </Button>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Button
+                  color="inherit"
+                  variant="outlined"
+                  sx={{
+                    ml: 2,
+                    fontWeight: "bold",
+                  }}
+                >
+                  Get in Touch
+                </Button>
+              </motion.div>
+            </>
+          )}
+        </Box>
       </Toolbar>
-    </Box>
+
+      <Drawer
+        variant="temporary"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{
+          keepMounted: true,
+        }}
+        sx={{
+          display: { xs: "block", md: "none" },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
+            width: "100%",
+            height: "auto",
+          },
+        }}
+        anchor="top"
+      >
+        {drawer}
+      </Drawer>
+    </AppBar>
   );
 };
 

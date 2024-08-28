@@ -24,7 +24,7 @@ const Footer = () => {
               <br />
               Maharaja Agrasen Institute of Technology
               <br />
-              atom@inventati.org
+              atomroboticslab@gmail.com
             </Typography>
           </Grid>
 

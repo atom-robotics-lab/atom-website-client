@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import {
   AppBar,
   Toolbar,
-  Typography,
   Button,
   IconButton,
   Drawer,
@@ -16,8 +15,16 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
 
-const navItems = ["Home", "About", "Blogs", "Achievements", "Projects"];
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Blogs", href: "/blogs" },
+  { label: "Achievements", href: "/achievements" },
+  { label: "Projects", href: "/projects" },
+];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -39,12 +46,14 @@ const Navbar = () => {
         >
           <List>
             {navItems.map((item) => (
-              <ListItem button key={item}>
-                <ListItemText
-                  primary={item}
-                  primaryTypographyProps={{ fontWeight: "bold" }}
-                />
-              </ListItem>
+              <Link key={item.label} href={item.href} passHref>
+                <ListItem button onClick={handleDrawerToggle}>
+                  <ListItemText
+                    primary={item.label}
+                    primaryTypographyProps={{ fontWeight: "bold", color: "white" }}
+                  />
+                </ListItem>
+              </Link>
             ))}
           </List>
         </motion.div>
@@ -56,7 +65,7 @@ const Navbar = () => {
     <AppBar
       position="static"
       sx={{
-        backgroundColor: "transparent",
+        backgroundColor: isMobile ? "#1976d2" : "transparent",
         position: "fixed",
         zIndex: 9999999,
       }}
@@ -67,17 +76,16 @@ const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", sm: "block" },
-              fontWeight: "700",
-            }}
-          >
-            A.T.O.M ROBOTCS LAB{" "}
-          </Typography>
+          <Box sx={{ display: { xs: "none", sm: "block" }, width: 80, height: 40 }}>
+            <Image
+              src="/logo_1.png"
+              alt="Logo"
+              width={120}
+              height={40}
+              layout="responsive"
+              objectFit="contain"
+            />
+          </Box>
         </motion.div>
 
         <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -94,35 +102,36 @@ const Navbar = () => {
           ) : (
             <>
               {navItems.map((item) => (
-                <motion.div
-                  key={item}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button
-                    color="inherit"
-                    sx={{
-                      fontWeight: "bold",
-                      position: "relative",
-                      "&::after": {
-                        content: '""',
-                        position: "absolute",
-                        width: "0%",
-                        height: "2px",
-                        bottom: 0,
-                        left: "50%",
-                        backgroundColor: "white",
-                        transition: "all 0.3s ease",
-                      },
-                      "&:hover::after": {
-                        width: "100%",
-                        left: "0%",
-                      },
-                    }}
+                <Link key={item.label} href={item.href} passHref>
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
                   >
-                    {item}
-                  </Button>
-                </motion.div>
+                    <Button
+                      color="inherit"
+                      sx={{
+                        fontWeight: "bold",
+                        position: "relative",
+                        "&::after": {
+                          content: '""',
+                          position: "absolute",
+                          width: "0%",
+                          height: "2px",
+                          bottom: 0,
+                          left: "50%",
+                          backgroundColor: "white",
+                          transition: "all 0.3s ease",
+                        },
+                        "&:hover::after": {
+                          width: "100%",
+                          left: "0%",
+                        },
+                      }}
+                    >
+                      {item.label}
+                    </Button>
+                  </motion.div>
+                </Link>
               ))}
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
@@ -135,6 +144,7 @@ const Navbar = () => {
                   sx={{
                     ml: 2,
                     fontWeight: "bold",
+                    borderRadius: "16px"
                   }}
                 >
                   Get in Touch
@@ -158,6 +168,8 @@ const Navbar = () => {
             boxSizing: "border-box",
             width: "100%",
             height: "auto",
+            backgroundColor: "#1976d2", // Set drawer background color to blue
+            color: "white", // Ensure text is visible against the blue background
           },
         }}
         anchor="top"

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Poppins } from "next/font/google";
 import { WobbleCard } from "@/components/ui/wobble-card";
 
@@ -54,20 +54,20 @@ const Projects = () => {
       bgImage: "bg-[url('/project-thumbnails/robotic-arm-gui.jpg')]",
     },
     {
-        title: "Line Follower",
-        description: "ROS | OpenCV | Gazebo | Robot-Perception",
-        bgImage: "bg-[url('/project-thumbnails/lfr.png')]",
-      },
-      {
-        title: "Person Follower",
-        description: "ROS | OpenCV | Gazebo | Robot-Perception",
-        bgImage: "bg-[url('/project-thumbnails/person-follower.png')]",
-      },
-      {
-        title: "Perception Pipeline",
-        description: "ROS | OpenCV | Gazebo | Robot-Perception",
-        bgImage: "bg-[url('/project-thumbnails/perception.png')]",
-      },
+      title: "Line Follower",
+      description: "ROS | OpenCV | Gazebo | Robot-Perception",
+      bgImage: "bg-[url('/project-thumbnails/lfr.png')]",
+    },
+    {
+      title: "Person Follower",
+      description: "ROS | OpenCV | Gazebo | Robot-Perception",
+      bgImage: "bg-[url('/project-thumbnails/person-follower.png')]",
+    },
+    {
+      title: "Perception Pipeline",
+      description: "ROS | OpenCV | Gazebo | Robot-Perception",
+      bgImage: "bg-[url('/project-thumbnails/perception.png')]",
+    },
   ];
 
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -78,8 +78,11 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center py-32 px-8">
-      <h1 className={`${poppins.className} text-4xl md:text-4xl font-bold mb-12 text-center`}>
-        We at <span className="text-blue-500">A.T.O.M Robotics Labs</span> <br /> have built some exciting projects
+      <h1
+        className={`${poppins.className} text-4xl md:text-4xl font-bold mb-12 text-center`}
+      >
+        We at <span className="text-blue-500">A.T.O.M Robotics Labs</span>{" "}
+        <br /> have built some exciting projects
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
@@ -89,7 +92,7 @@ const Projects = () => {
             containerClassName={`${project.bgImage} bg-cover bg-center min-h-[300px] flex flex-col justify-between relative`}
           >
             {/* Dark overlay to reduce brightness of the background image */}
-        
+
             <div className="p-4 flex-1">
               <h2 className="text-left text-balance text-base md:text-xl lg:text-2xl font-semibold tracking-[-0.015em] text-white">
                 {project.title}

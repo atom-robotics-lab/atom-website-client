@@ -50,7 +50,7 @@ const Footer = () => {
                 <Link href="/blogs" color="inherit" underline="hover" sx={{ display: 'block', marginBottom: '0.5rem' }}>
                   Blogs
                 </Link>
-                <Link href="/contact" color="inherit" underline="hover" sx={{ display: 'block', marginBottom: '0.5rem' }}>
+                <Link href="https://linktr.ee/a.t.o.m_robotics_lab" color="inherit" underline="hover" sx={{ display: 'block', marginBottom: '0.5rem' }}>
                   Contact
                 </Link>
               </Grid>

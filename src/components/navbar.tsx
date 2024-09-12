@@ -19,7 +19,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const navItems = [
-  { label: "Home", href: "/" },
+  { label: "Home", href: "/home" },
   { label: "About", href: "/about" },
   { label: "Blogs", href: "/blogs" },
   { label: "Achievements", href: "/achievements" },
@@ -146,6 +146,7 @@ const Navbar = () => {
                     fontWeight: "bold",
                     borderRadius: "16px"
                   }}
+                  href = "https://linktr.ee/a.t.o.m_robotics_lab"
                 >
                   Get in Touch
                 </Button>

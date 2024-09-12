@@ -92,6 +92,7 @@ const Home = () => {
               md: "0.5rem 1.5rem",
             },
           }}
+          href="https://linktr.ee/a.t.o.m_robotics_lab"
         >
           Contact Us
         </Button>
@@ -107,6 +108,7 @@ const Home = () => {
               md: "0.5rem 1.5rem",
             },
           }}
+          href="https://atom-robotics-lab.github.io/wiki/"
         >
           Selection Task
         </Button>

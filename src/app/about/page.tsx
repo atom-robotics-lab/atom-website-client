@@ -98,6 +98,15 @@ const About = () => {
               linkedinLink: "https://www.linkedin.com/in/prakhar1535/",
             },
             {
+              circleImageSrc: "/images/shlok.png",
+              name: "SHLOK SHARMA (@shawarma)",
+              description: "CORE | Embedded Systems | IOT",
+              instagramLink: "https://instagram.com/shlok_shawarma",
+              githubLink: "https://github.com/shloksharma273",
+              linkedinLink: "https://www.linkedin.com/in/shlok-sharma-b42320264/",
+            },
+
+            {
               circleImageSrc: "/images/aastha.png",
               name: "AASTHA VERMA (@pixelpuff)",
               description: "CORE | AI/ML | ROS | IOT",
@@ -162,23 +171,7 @@ const About = () => {
               githubLink: "https://github.com/sudo-deep",
               linkedinLink: "https://linkedin.com/in/deepanshgl",
             },
-            {
-              circleImageSrc: "/images/prakhar.png",
-              name: "PRAKHAR SHARMA (@pyarakhar)",
-              description: "CORE | Embedded Systems | IOT",
-              instagramLink: "https://instagram.com/prakhar.sharma_27",
-              githubLink: "https://github.com/pyarakhar",
-              linkedinLink: "https://linkedin.com/in/prakhar-sharma27",
-            },
-              {
-                circleImageSrc: "/images/shlok.png",
-                name: "SHLOK SHARMA (@shawarma)",
-                description: "CORE | Embedded Systems | IOT",
-                instagramLink: "https://instagram.com/shlok_shawarma",
-                githubLink: "https://github.com/shloksharma273",
-                linkedinLink: "https://www.linkedin.com/in/shlok-sharma-b42320264/",
-              },
-  
+              
               {
                 circleImageSrc: "/images/anurag.png",
                 name: "ANURAG (@augi)",

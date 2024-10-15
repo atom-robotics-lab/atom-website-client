@@ -107,7 +107,7 @@ const Projects = () => {
           onClose={closeModal}
           title={selectedProject.title}
         >
-          <div className="p-8 rounded-lg text-white">
+          <div className="p-8 rounded-lg text-black">
             {selectedProject.sections.map((section, index) => (
               <div key={index} className="mb-6">
                 {section.title && (

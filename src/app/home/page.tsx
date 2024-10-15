@@ -39,6 +39,8 @@ const Home = () => {
           left: 0,
           zIndex: -1,
           opacity: 0.5,
+          transform: "scale(1.2)", // Zoom in effect
+          objectFit: "cover", // Make sure the video covers the container
         }}
       />
 

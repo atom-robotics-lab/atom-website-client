@@ -43,7 +43,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }) => {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 20 }}
         ref={containerRef}
-        className="max-w-5xl mx-auto bg-white dark:bg-neutral-900 h-fit z-[60] my-10 p-4 md:p-10 rounded-3xl font-sans relative"
+        className="max-w-5xl mx-auto bg-neutral-900 h-fit z-[60] my-10 p-4 md:p-10 rounded-3xl font-sans relative"
         style={{
           marginTop: '100px',
           maxHeight: '90vh',
@@ -61,13 +61,13 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }) => {
         `}</style>
 
         <button
-          className=" top-4 h-8 w-8 right-0 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center"
+          className="top-4 h-8 w-8 right-0 ml-auto bg-black rounded-full flex items-center justify-center"
           onClick={onClose}
         >
-          <X className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
+          <X className="h-6 w-6 text-neutral-100" />
         </button>
-        <div className="text-base font-medium text-black dark:text-white">
-          <h2 className="text-2xl md:text-5xl font-semibold text-neutral-700 mt-4 dark:text-white">
+        <div className="text-base font-medium text-white">
+          <h2 className="text-2xl md:text-5xl font-semibold text-white mt-4">
             {title}
           </h2>
         </div>

@@ -204,7 +204,55 @@
             ]
           }
         ]
+    },
+    {
+      "title": "Hexapod",
+      "description": "ROS | OpenCV | Gazebo | Robot-Perception",
+      "bgImage": "'/project-thumbnails/hexapod.png'",
+      "sections": [
+        {
+          "content": [
+            "Some contento"
+          ]
+        }
+      ]
+  },
+  {
+    "title": "Omnidrive AMR",
+    "description": "ROS | OpenCV | Gazebo | Robot-Perception",
+    "bgImage": "'/project-thumbnails/omnidrive.png'",
+    "sections": [
+      {
+        "content": [
+          "Some contento"
+        ]
+      }
+    ]
+},
+{
+  "title": "Swarm Bots",
+  "description": "ROS | OpenCV | Gazebo | Robot-Perception",
+  "bgImage": "'/project-thumbnails/swarm-bot.jpeg'",
+  "sections": [
+    {
+      "content": [
+        "Some contento"
+      ]
     }
+  ]
+},
+{
+  "title": "Perception Pipeline",
+  "description": "ROS | OpenCV | Gazebo | Robot-Perception",
+  "bgImage": "'/project-thumbnails/perception.png'",
+  "sections": [
+    {
+      "content": [
+        "Some contento"
+      ]
+    }
+  ]
+}
 
   ]
   

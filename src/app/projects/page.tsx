@@ -56,6 +56,7 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center py-32 px-8">
+
       <h1
         className={`${poppins.className} text-4xl md:text-4xl font-bold mb-12 text-center`}
       >
@@ -107,7 +108,7 @@ const Projects = () => {
           onClose={closeModal}
           title={selectedProject.title}
         >
-          <div className="p-8 rounded-lg text-black">
+          <div className="p-8 rounded-lg text-white">
             {selectedProject.sections.map((section, index) => (
               <div key={index} className="mb-6">
                 {section.title && (

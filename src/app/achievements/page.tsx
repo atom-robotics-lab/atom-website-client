@@ -30,6 +30,49 @@ const textStyle = {
 
 const achievements = [
   {
+    title: "Innovation Mela",
+    description: "2nd Position",
+    header: "",
+    icon: <img src="/images/IM_2.png" alt="Icon 1" style={imageStyle} />,
+  },
+  {
+    title: "E-yantra 2024-25",
+    description: "finalist",
+    header: "",
+    icon: <img src="/images/drone_eyantra.jpg" alt="Icon 1" style={imageStyle} />,
+  },
+  {
+    title: "E-yantra 2024-25",
+    description: "finalist",
+    header: "",
+    icon: <img src="/images/fpga.jpg" alt="Icon 1" style={imageStyle} />,
+  },
+  {
+    title: "E-yantra 2024-25",
+    description: "finalist",
+    header: "",
+    icon: <img src="/images/balancer.png" alt="Icon 1" style={imageStyle} />,
+  },
+
+  {
+    title: "Innovation Mela",
+    description: "3rd Position",
+    header: "",
+    icon: <img src="/images/IM_3.PNG" alt="Icon 1" style={imageStyle} />,
+  },
+  {
+    title: "INVICTUS-DTU",
+    description: "3rd Position",
+    header: "",
+    icon: <img src="/images/dtu_LFR.jpg" alt="Icon 1" style={imageStyle} />,
+  },
+  {
+    title: "GALACTIC DOGDER-IIT KANPUR",
+    description: "3rd Position",
+    header: "",
+    icon: <img src="/images/galactic.jpg" alt="Icon 1" style={imageStyle} />,
+  },
+  {
     title: "Escalade",
     description: "Finalists",
     header: "",
@@ -101,30 +144,7 @@ const achievements = [
     header: "",
     icon: <img src="/images/hwm4.png" alt="Icon 1" style={imageStyle} />,
   },
-  {
-    title: "Innovation Mela",
-    description: "2nd Position",
-    header: "",
-    icon: <img src="/images/IM_2.png" alt="Icon 1" style={imageStyle} />,
-  },
-  {
-    title: "Innovation Mela",
-    description: "3rd Position",
-    header: "",
-    icon: <img src="/images/IM_3.PNG" alt="Icon 1" style={imageStyle} />,
-  },
-  {
-    title: "INVICTUS-DTU",
-    description: "3rd Position",
-    header: "",
-    icon: <img src="/images/dtu_LFR.jpg" alt="Icon 1" style={imageStyle} />,
-  },
-  {
-    title: "GALACTIC DOGDER-IIT KANPUR",
-    description: "3rd Position",
-    header: "",
-    icon: <img src="/images/galactic.jpg" alt="Icon 1" style={imageStyle} />,
-  },
+
 ];
 
 const AchievementsPage = () => {

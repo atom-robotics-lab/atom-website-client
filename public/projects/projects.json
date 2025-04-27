@@ -211,35 +211,86 @@
       "bgImage": "'/project-thumbnails/hexapod.png'",
       "sections": [
         {
-          "content": [
-            "Some contento"
-          ]
-        }
+      "title":"OVERVIEW",
+       "image": "/project-thumbnails/hexapod3.png",
+      "content": [
+          "This project develops a six-legged (hexapod) AMR that uses a Tripod Gait and Inverse Kinematics (IK) for smooth, stable walking. Each leg has three degrees of freedom for precise 3D foot placement. IK ensures realistic, efficient leg movements, maintaining stability during turns and direction changes."
+
+       
+      ]
+    },
+    {
+      "title":"FEATURES",
+      "content": [
+         "<b> 1.Custom Inverse Kinematics: </b> Custom inverse kinematics were developed specifically for this hexapod robot to precisely control each leg's movement. This ensures smooth, stable walking, even across challenging terrain.",
+         "<b> 2.Visual-Inertial SLAM for Navigation: </b> A Visual-Inertial SLAM system which combines camera and IMU data to map the environment in reak time, enabling the robot to localize itself, plan paths and avoid obstacles without depending on GPS.",
+         "<b> 3. 3-DOF Hexapod Mobility: </b> Three independent joints in each leg allows precise control over foot position in 3-D space. This ensures smooth walking, easy climbing over obstactles and adjusting to rough terrains."
+      ]
+    }
       ]
   },
   {
     "title": "Omnidrive AMR",
-    "description": "ROS | OpenCV | Gazebo | Robot-Perception",
+    "description": "ROS | SLAM | Gazebo | Rviz",
     "bgImage": "'/project-thumbnails/omnidrive.png'",
     "sections": [
-      {
-        "content": [
-          "Some contento"
-        ]
-      }
-    ]
-},
-{
-  "title": "Swarm Bots",
-  "description": "ROS | OpenCV | Gazebo | Robot-Perception",
-  "bgImage": "'/project-thumbnails/swarm-bot.jpeg'",
-  "sections": [
-    {
+       {
+      "title":"OVERVIEW",
       "content": [
-        "Some contento"
+          " OmniDrive is an omnidirectional robot designed for smooth and precise movement in all directions. It uses a setup of omniwheels, which allows it to slide sideways, rotate in place, and move through tight spaces without needing to turn its body. This makes it well-suited for indoor environments like warehouses, where space is limited and quick direction changes are important. The robot can do indoor navigation and is integrated with ROS 2, making it ready for tasks like path planning and localization."
+      ]
+    },
+    {
+        "title": "OMNIDIRVE SIMULATION",
+        "video": "https://youtube.com/watch?v=81slZ8pKs7g",
+        "content": [""]
+    },
+    
+    {
+      "title":"FEATURES",
+      "content": [
+         "<b> 1.8-Axis Mobility: </b>The robot can move in any direction — laterally, diagonally, and rotationally — without the need for U-turns. This allows it to navigate smoothly in tight and complex spaces.",
+         "<b> 2.LiDar-Based Environment Mapping: </b>  Using a LiDAR sensor, the robot constantly scans its surroundings to generate an accurate 3D map. This enables awareness of nearby objects and spatial understanding for smarter decisions.",
+         "<b> 3.Autonomous Indoor Navigation: </b>  Designed specifically for indoor environments, the robot consistently follows its path even through varied layouts. It adapts to different structural arrangements without requiring external input.",
+         "<b> 4.Real-Time Localization System: </b> By fusing odometry with sensor data, the robot accurately tracks its position at every moment. This ensures it knows exactly where it is, even while in motion or turning.",
+         "<b> 5.Obstacle Avoidance: </b>The robot detects and avoids objects. It actively adjusts its path in real time to prevent collisions and maintain uninterrupted movement."
+
+
+       
       ]
     }
   ]
+},
+{
+  "title": "Lab Server",
+  "description": "Python | ESP32 | MongoDB | Flask | HTTP",
+  "bgImage": "'/project-thumbnails/labserver2.jpeg'",
+  "sections": [
+     {
+    "title":"OVERVIEW",
+    "content": [
+        "Lab-Server is an RFID-based security system designed to control and monitor access to a laboratory. It uses an ESP32 DevKit V2 as the main controller to read RFID tags and verify user authorization. When an RFID card is scanned, the ESP32 communicates with a Flask-based backend server, hosted on PythonAnywhere, to validate the UID. "
+    ]
+  },
+  {
+    "title":"Lab server functioning",
+    "video": "https://youtu.be/FlggSwEH27s?",
+    "content": [""]
+  },
+  {
+    "title":"FEATURES",
+    "content": [
+       "<b> 1. RFID-Based Cloud Authentication: </b> Securely verifies users with RFID cards using the ESP32 DevKit V2, with real-time UID validation through a Flask server hosted on PythonAnywhere.",
+       "<b> 2. Comprehensive Access Logging: </b>  All authorized and unauthorized attempts are automatically logged to a MongoDB database.",
+       "<b> 3.Battery Backup Ready: </b>  Equipped with a Battery Management System (BMS) and supports 12V external battery for uninterrupted operation.",
+       "<b> 4.Remote Smartphone Control: </b>  Enables wireless monitoring and control directly from a mobile device.",
+       "<b> 5.Custom-designed PCB : </b>The system features a custom designed PCB for efficient and reliable hardware integration."
+
+
+     
+    ]
+  }
+]
 },
 {
   "title": "Perception Pipeline",
@@ -247,12 +298,30 @@
   "bgImage": "'/project-thumbnails/perception.png'",
   "sections": [
     {
+      "title":"OVERVIEW",
       "content": [
-        "Some contento"
+          "Perception Pipeline is a modular and plug-and-play ROS 2-based solution for robotics perception tasks. It provides a collection of ready-to-use components that handle everything from image pre-processing to object detection and segmentation. Designed for flexibility, the system allows quick setup and iteration—whether you're building something experimental or preparing for deployment. Each module can be swapped or stacked like LEGO, minimizing rework and speeding up development."
+
+       
+      ]
+    },
+    {
+      "video":"https://youtu.be/F-IA7CG5rak?"
+    },
+    {
+      "title":"FEATURES",
+      "content": [
+         "<b> 1.ROS 2 Native: </b> Built from the ground up on ROS 2, making it compatible with modern robotics stacks.",
+         "<b> 2.Plug-and-Play Components: </b> The modular design allows you to add, remove, or update components easily, enabling fast prototyping and smooth development cycles.",
+         "<b> 3.Open Source: </b> A state-of-the-art open source project that’s actively maintained and structured for long-term use.",
+         "<b> 4.Containerized Setup: </b> The entire system runs in Docker, which means consistent behavior across machines—no more dependency hell."
+
+
+       
       ]
     }
   ]
 }
+]
 
-  ]
   

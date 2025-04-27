@@ -90,23 +90,6 @@ const About = () => {
               linkedinLink: "https://www.linkedin.com/in/aakshar-garg-64611026a/",
             },
             {
-              circleImageSrc: "/images/prakhar.png",
-              name: "PRAKHAR SHARMA (@pyarakhar)",
-              description: "CORE | Web Development",
-              instagramLink: "https://instagram.com/pyarakhar",
-              githubLink: "https://github.com/prakhar1535",
-              linkedinLink: "https://www.linkedin.com/in/prakhar1535/",
-            },
-            {
-              circleImageSrc: "/images/shlok.png",
-              name: "SHLOK SHARMA (@shawarma)",
-              description: "CORE | Embedded Systems | IOT",
-              instagramLink: "https://instagram.com/shlok_shawarma",
-              githubLink: "https://github.com/shloksharma273",
-              linkedinLink: "https://www.linkedin.com/in/shlok-sharma-b42320264/",
-            },
-
-            {
               circleImageSrc: "/images/aastha.png",
               name: "AASTHA VERMA (@pixelpuff)",
               description: "CORE | AI/ML | ROS | IOT",

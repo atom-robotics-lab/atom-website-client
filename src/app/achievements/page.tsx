@@ -101,6 +101,30 @@ const achievements = [
     header: "",
     icon: <img src="/images/hwm4.png" alt="Icon 1" style={imageStyle} />,
   },
+  {
+    title: "Innovation Mela",
+    description: "2nd Position",
+    header: "",
+    icon: <img src="/images/IM_2.png" alt="Icon 1" style={imageStyle} />,
+  },
+  {
+    title: "Innovation Mela",
+    description: "3rd Position",
+    header: "",
+    icon: <img src="/images/IM_3.PNG" alt="Icon 1" style={imageStyle} />,
+  },
+  {
+    title: "INVICTUS-DTU",
+    description: "3rd Position",
+    header: "",
+    icon: <img src="/images/dtu_LFR.jpg" alt="Icon 1" style={imageStyle} />,
+  },
+  {
+    title: "GALACTIC DOGDER-IIT KANPUR",
+    description: "3rd Position",
+    header: "",
+    icon: <img src="/images/galactic.jpg" alt="Icon 1" style={imageStyle} />,
+  },
 ];
 
 const AchievementsPage = () => {

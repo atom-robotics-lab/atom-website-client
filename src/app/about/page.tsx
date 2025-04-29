@@ -90,6 +90,31 @@ const About = () => {
               linkedinLink: "https://www.linkedin.com/in/aakshar-garg-64611026a/",
             },
             {
+              circleImageSrc: "/images/aryan.png",
+              name: "ARYAN SETHI (@amplifier)",
+              description: "ADMIN | ROS | CAD | IOT",
+              instagramLink: "https://instagram.com/aryan.sethi06",
+              githubLink: "https://github.com/Aryans006",
+              linkedinLink: "https://www.linkedin.com/in/aryan-sethi-3973b128b/",
+            },
+
+            {
+              circleImageSrc: "/images/vansh.png",
+              name: "VANSH GUPTA (@vansh)",
+              description: "ADMIN | CAD | IOT",
+              instagramLink: "https://instagram.com/vanshgupta917",
+              githubLink: "https://github.com/rule_keeper",
+              linkedinLink: "https://linkedin.com/in/rule_keeper",
+            },
+            {
+              circleImageSrc: "/images/akshat.png",
+              name: "AKSHAT (@hominum)",
+              description: "ADMIN | Embedded Systems | IOT",
+              instagramLink: "https://instagram.com/akshat_sharma05",
+              githubLink: "https://github.com/AkshatSharma05",
+              linkedinLink: "https://www.linkedin.com/in/akshat-sharma-166932161/",
+            },
+            {
               circleImageSrc: "/images/aastha.png",
               name: "AASTHA VERMA (@pixelpuff)",
               description: "CORE | AI/ML | ROS | IOT",
@@ -105,23 +130,7 @@ const About = () => {
               githubLink: "https://github.com/rubber-giant",
               linkedinLink: "https://www.linkedin.com/in/tanmay-singh-07b539291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
             },
-            {
-              circleImageSrc: "/images/aryan.png",
-              name: "ARYAN SETHI (@amplifier)",
-              description: "CORE | ROS | CAD | IOT",
-              instagramLink: "https://instagram.com/aryan.sethi06",
-              githubLink: "https://github.com/Aryans006",
-              linkedinLink: "https://www.linkedin.com/in/aryan-sethi-3973b128b/",
-            },
-
-            {
-              circleImageSrc: "/images/vansh.png",
-              name: "VANSH GUPTA (@vansh)",
-              description: "CORE | CAD | IOT",
-              instagramLink: "https://instagram.com/vanshgupta917",
-              githubLink: "https://github.com/rule_keeper",
-              linkedinLink: "https://linkedin.com/in/rule_keeper",
-            },
+            
             {
               circleImageSrc: "/images/mehak.png",
               name: "MEHAK OBEROI (@goofball)",
@@ -130,14 +139,7 @@ const About = () => {
               githubLink: "https://github.com/mehakoberoii",
               linkedinLink: "https://www.linkedin.com/in/mehak-oberoi-9191a62b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
             },
-            {
-              circleImageSrc: "/images/akshat.png",
-              name: "AKSHAT (@hominum)",
-              description: "CORE | Embedded Systems | IOT",
-              instagramLink: "https://instagram.com/akshat_sharma05",
-              githubLink: "https://github.com/AkshatSharma05",
-              linkedinLink: "https://www.linkedin.com/in/akshat-sharma-166932161/",
-            },
+            
             {
               circleImageSrc: "/images/mitanshu.png",
               name: "MITANSHU (@suus)",

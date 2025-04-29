@@ -30,32 +30,32 @@ const textStyle = {
 
 const achievements = [
   {
-    title: "Innovation Mela",
+    title: "Innovation Mela 2025",
     description: "2nd Position",
     header: "",
     icon: <img src="/images/IM_2.png" alt="Icon 1" style={imageStyle} />,
   },
   {
     title: "E-yantra 2024-25",
-    description: "finalist",
+    description: "Semi finalist",
     header: "",
     icon: <img src="/images/drone_eyantra.jpg" alt="Icon 1" style={imageStyle} />,
   },
   {
     title: "E-yantra 2024-25",
-    description: "finalist",
+    description: "Semi finalist",
     header: "",
     icon: <img src="/images/fpga.jpg" alt="Icon 1" style={imageStyle} />,
   },
   {
     title: "E-yantra 2024-25",
-    description: "finalist",
+    description: "Semi finalist",
     header: "",
     icon: <img src="/images/balancer.png" alt="Icon 1" style={imageStyle} />,
   },
 
   {
-    title: "Innovation Mela",
+    title: "Innovation Mela 2025",
     description: "3rd Position",
     header: "",
     icon: <img src="/images/IM_3.PNG" alt="Icon 1" style={imageStyle} />,

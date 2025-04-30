@@ -133,7 +133,7 @@ const Projects = () => {
                     className="w-full h-auto my-2 object-cover"
                   />
                 )}
-                {section.content.map((paragraph, i) => (
+                {section.content?.map((paragraph, i) => (
                   <p key={i} className="text-lg my-4">
                     {/* Only call split if paragraph is a string */}
                     {typeof paragraph === "string" ? (

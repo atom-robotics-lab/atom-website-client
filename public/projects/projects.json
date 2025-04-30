@@ -220,6 +220,11 @@
       ]
     },
     {
+      "title":"Hexapod Functioning" ,
+      "video": "https://www.youtube.com/watch?v=xpnilti2U3U",
+      "content": [""]
+    },
+    {
       "title":"FEATURES",
       "content": [
          "<b> 1.Custom Inverse Kinematics: </b> Custom inverse kinematics were developed specifically for this hexapod robot to precisely control each leg's movement. This ensures smooth, stable walking, even across challenging terrain.",
@@ -274,7 +279,7 @@
   },
   {
     "title":"Lab server functioning",
-    "video": "https://youtu.be/FlggSwEH27s?",
+    "video": "https://www.youtube.com/watch?v=FlggSwEH27s",
     "content": [""]
   },
   {
@@ -295,7 +300,7 @@
 {
   "title": "Perception Pipeline",
   "description": "ROS | OpenCV | Gazebo | Robot-Perception",
-  "bgImage": "'/project-thumbnails/perception.png'",
+  "bgImage": "/project-thumbnails/perception.png",
   "sections": [
     {
       "title":"OVERVIEW",
@@ -306,7 +311,7 @@
       ]
     },
     {
-      "video":"https://youtu.be/F-IA7CG5rak?"
+      "video":"https://www.youtube.com/watch?v=F-IA7CG5rak"
     },
     {
       "title":"FEATURES",

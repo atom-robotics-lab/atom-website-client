@@ -323,6 +323,32 @@ const About = () => {
                 linkedinLink: "https://www.linkedin.com/in/shivam-gupta-ab609a218/"
               },
               {
+                circleImageSrc: "/images/vedika.png",
+                name: "VEDIKA ANAND ( @veronica )",
+                description: " Electronic | Ros2 ",
+                instagramLink: "https://www.instagram.com/vedikanand1?igsh=MTVkNTU4bmV5OTM4",
+                githubLink: "https://github.com/vedika82",
+                linkedinLink: "https://www.linkedin.com/in/vedika-anand-466a11302"
+              },
+              {
+                circleImageSrc: "/images/YPS.jpg",
+                name: "YASH PRATAP SINGH ( @YPS )",
+                description: " Electronic | Ros2 ",
+                instagramLink: "https://www.instagram.com/p.s._yash?igsh=MWdvYWxtcmdydHZtcw==",
+                githubLink: "https://github.com/YashPS-code",
+                linkedinLink: "https://www.linkedin.com/in/yash-pratap-singh-0389a9334"
+              },
+              {
+                circleImageSrc: "/images/YPS.jpg",
+                name: "YASH PRATAP SINGH ( @YPS )",
+                description: " Electronic | Ros2 ",
+                instagramLink: "https://www.instagram.com/p.s._yash?igsh=MWdvYWxtcmdydHZtcw==",
+                githubLink: "https://github.com/YashPS-code",
+                linkedinLink: "https://www.linkedin.com/in/yash-pratap-singh-0389a9334"
+              },
+              
+
+              {
                 circleImageSrc: "/images/yashy.png",
                 name: "YASHVARDHAN SINGH ( @yASHy )",
                 description: " Electronic | Ros2 | IOT | CAD ",

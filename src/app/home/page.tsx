@@ -94,7 +94,7 @@ const Home = () => {
               md: "0.5rem 1.5rem",
             },
           }}
-          href="https://linktr.ee/a.t.o.m_robotics_lab"
+          href="https://lnk.bio/A.T.O.M"
         >
           Contact Us
         </Button>

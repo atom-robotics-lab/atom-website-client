@@ -146,7 +146,7 @@ const Navbar = () => {
                     fontWeight: "bold",
                     borderRadius: "16px"
                   }}
-                  href = "https://linktr.ee/a.t.o.m_robotics_lab"
+                  href = "https://lnk.bio/A.T.O.M"
                 >
                   Get in Touch
                 </Button>

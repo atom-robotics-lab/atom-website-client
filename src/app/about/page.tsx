@@ -309,7 +309,7 @@ const About = () => {
               {
                 circleImageSrc: "/images/Earthian.jpeg",
                 name: "Earthian Prithviwasi ( @Earthian Prithviwasi )",
-                description: " Electronic | Ros2 ",
+                description: " Electronics | Ros2 ",
                 instagramLink: "https://www.instagram.com/earthianprithviwasi/",
                 githubLink: "https://github.com/Earthia8",
                 linkedinLink: "https://www.linkedin.com/in/earthianprithviwasi"
@@ -317,7 +317,7 @@ const About = () => {
               {
                 circleImageSrc: "/images/SHIVAM.png",
                 name: "SHIVAM GUPTA ( @bhaikilaundry )",
-                description: " Electronic | Ros2 ",
+                description: " Electronics | Ros2 ",
                 instagramLink: "https://www.instagram.com/shivam_sensei/",
                 githubLink: "https://github.com/shivam-sensei",
                 linkedinLink: "https://www.linkedin.com/in/shivam-gupta-ab609a218/"
@@ -325,42 +325,36 @@ const About = () => {
               {
                 circleImageSrc: "/images/vedika.png",
                 name: "VEDIKA ANAND ( @veronica )",
-                description: " Electronic | Ros2 ",
+                description: " Electronics | Ros2 ",
                 instagramLink: "https://www.instagram.com/vedikanand1?igsh=MTVkNTU4bmV5OTM4",
                 githubLink: "https://github.com/vedika82",
                 linkedinLink: "https://www.linkedin.com/in/vedika-anand-466a11302"
               },
               {
-                circleImageSrc: "/images/YPS.jpg",
-                name: "YASH PRATAP SINGH ( @YPS )",
-                description: " Electronic | Ros2 ",
-                instagramLink: "https://www.instagram.com/p.s._yash?igsh=MWdvYWxtcmdydHZtcw==",
-                githubLink: "https://github.com/YashPS-code",
-                linkedinLink: "https://www.linkedin.com/in/yash-pratap-singh-0389a9334"
+                circleImageSrc: "/images/malvika.jpg",
+                name: "MALVIKA ARORA( @Bonnie clyde )",
+                description: " Electronics | CAD ",
+                instagramLink: "https://www.instagram.com/malvikaa27/",
+                githubLink: "https://github.com/malvika270",
+                linkedinLink: "https://www.linkedin.com/in/malvika-arora-ab9791326"
               },
               {
                 circleImageSrc: "/images/YPS.jpg",
                 name: "YASH PRATAP SINGH ( @YPS )",
-                description: " Electronic | Ros2 ",
+                description: " Electronics | Ros2 ",
                 instagramLink: "https://www.instagram.com/p.s._yash?igsh=MWdvYWxtcmdydHZtcw==",
                 githubLink: "https://github.com/YashPS-code",
                 linkedinLink: "https://www.linkedin.com/in/yash-pratap-singh-0389a9334"
               },
-              
-
               {
                 circleImageSrc: "/images/yashy.png",
                 name: "YASHVARDHAN SINGH ( @yASHy )",
-                description: " Electronic | Ros2 | IOT | CAD ",
+                description: " Electronics | CAD ",
                 instagramLink: "https://www.instagram.com/v_y8xh/",
                 githubLink: "https://github.com/GITGUYX8",
                 linkedinLink: "https://linkedin.com/in/yashvardhan-singh-6026b731b"
               },
 
-
-             
-            
-  
             ]}
           />
         </div>

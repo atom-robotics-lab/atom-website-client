@@ -353,6 +353,22 @@ const About = () => {
                 instagramLink: "https://www.instagram.com/v_y8xh/",
                 githubLink: "https://github.com/GITGUYX8",
                 linkedinLink: "https://linkedin.com/in/yashvardhan-singh-6026b731b"
+              },       
+              {
+                circleImageSrc: "/images/sakshamJain.png",
+                name: "Saksham Jain (@GearbOx)",
+                description: " Electronics ",
+                instagramLink: "https://www.instagram.com/whiskersnwires/",
+                githubLink: "https://github.com/gearbOx16",
+                linkedinLink: "https://linkedin.com/in/saksham-jain-941a2632b/"
+              },
+              {
+                circleImageSrc: "/images/vanshMittal.png",
+                name: "Vansh Mittal (@mittu da)",
+                description: " CAD | ROS |  Electronics ",
+                instagramLink: " https://www.instagram.com/mittal_vansh05",
+                githubLink: "https://github.com/van05-04",
+                linkedinLink: "https://linkedin.com/in/vansh-mittal-702094333/"
               },
 
             ]}
